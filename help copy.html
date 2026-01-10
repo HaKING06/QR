@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chrome Kurulumu - QR Scanner</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="assets/icon.png">
+</head>
+<body class="bg-gray">
+
+    <nav class="navbar">
+        <div class="container nav-inner">
+            <a href="index.html" class="back-link">&larr; Ana Sayfaya Dön</a>
+            <span class="nav-title">Manuel Kurulum Rehberi</span>
+        </div>
+    </nav>
+
+    <main class="help-wrapper container">
+        <div class="help-header">
+            <h1>Chrome Kurulumu</h1>
+            <p>Eklentiyi resmi sitemizden indirdiniz. Şimdi tarayıcınıza tanıtmak için<br>aşağıdaki 3 adımı izleyin.</p>
+        </div>
+
+        <div class="steps-container">
+            
+            <div class="step-card">
+                <div class="step-badge">1</div>
+                <div class="step-info">
+                    <h3>Dosyayı Klasöre Çıkartın</h3>
+                    <p>İndirdiğiniz <b>QR-Scanner-v1.zip</b> dosyasına sağ tıklayın ve "Klasöre Ayıkla" deyin.</p>
+                    <div class="visual-box file-visual">
+                        <svg class="folder-icon" fill="currentColor" viewBox="0 0 24 24"><path d="M10 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2h-8l-2-2z"/></svg>
+                        <span>QR-Scanner-1</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="step-card">
+                <div class="step-badge">2</div>
+                <div class="step-info">
+                    <h3>Uzantılar Adresini Kopyalayın</h3>
+                    <p>Aşağıdaki kutuya tıklayarak adresi kopyalayın. Sonra <b>yeni sekme açıp</b> adres çubuğuna yapıştırın.</p>
+                    
+                    <div class="chrome-link-box" id="copyBox" onclick="copyLink()">
+                        <div style="display:flex; align-items:center; gap:10px;">
+                            <span class="link-icon">🔗</span>
+                            <span id="chrome-url">chrome://extensions</span>
+                        </div>
+                        <span class="copy-hint" id="copy-msg">Kopyalamak için Tıkla</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="step-card highlight">
+                <div class="step-badge">3</div>
+                <div class="step-info">
+                    <h3>Yükleme İşlemi</h3>
+                    <p>Açılan sayfada sağ üstten <b>Geliştirici Modu</b>'nu açın. Soldaki <b>"Paketlenmemiş öğe yükle"</b> butonuna basın ve klasörü seçin.</p>
+                    
+                    <div class="visual-box btn-visual">
+                        <div class="mock-btn-load">Paketlenmemiş öğe yükle</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="step-card warning">
+                <div class="step-badge">!</div>
+                <div class="step-info">
+                    <h3>Önemli: Klasörü Silmeyin</h3>
+                    <p>Manuel kurulumlarda tarayıcı dosyaları doğrudan o klasörden okur. <br> Eğer masaüstündeki <b>QR-Scanner-v1</b> klasörünü silerseniz veya <br> yerini değiştirirseniz eklenti çalışmayı durdurur.</p>
+                    <p>Tavsiye: Klasörü "Belgelerim" gibi güvenli bir yere taşıyıp oradan yükleyin.</p>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <script>
+        function copyLink() {
+            const text = document.getElementById("chrome-url").innerText;
+            navigator.clipboard.writeText(text);
+            
+            const box = document.getElementById("copyBox");
+            const msg = document.getElementById("copy-msg");
+            
+            // Görsel Geri Bildirim
+            box.classList.add("copied");
+            msg.innerText = "Kopyalandı! ✅";
+            
+            setTimeout(() => {
+                box.classList.remove("copied");
+                msg.innerText = "Kopyalamak için Tıkla";
+            }, 2500);
+        }
+    </script>
+
+</body>
+</html>
