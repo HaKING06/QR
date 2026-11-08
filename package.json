@@ -1,0 +1,20 @@
+{
+  "name": "qr-scanner",
+  "version": "1.1.1",
+  "private": true,
+  "description": "Private multilingual QR scanner, generator and browser extension",
+  "scripts": {
+    "test": "node --test tests/core.test.cjs",
+    "build": "python tools/build.py",
+    "check": "python tools/check.py",
+    "build:static": "node tools/prepare-static.cjs"
+  },
+  "keywords": [],
+  "author": "Halit (HaKING)",
+  "license": "MIT",
+  "type": "commonjs",
+  "dependencies": {
+    "jsqr": "1.4.0",
+    "qrcode-generator": "1.4.4"
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "extensionName": {
+    "message": "QR Scanner — Lire un QR & Créer un QR"
+  },
+  "extensionDescription": {
+    "message": "Lisez des images, scannez l’onglet actuel et créez des codes QR sans quitter votre navigateur."
+  }
+}

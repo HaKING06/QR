@@ -1,0 +1,8 @@
+{
+  "extensionName": {
+    "message": "QR Scanner — QR lesen & QR erstellen"
+  },
+  "extensionDescription": {
+    "message": "Lies Bilder, scanne den aktuellen Tab und erstelle QR-Codes, ohne den Browser zu verlassen."
+  }
+}

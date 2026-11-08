@@ -1,0 +1,17 @@
+/*
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  X-Frame-Options: DENY
+  Permissions-Policy: camera=(), microphone=(), geolocation=()
+  Content-Security-Policy: default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data: blob:; connect-src 'self'; object-src 'none'; base-uri 'self'; frame-ancestors 'none'; form-action 'self'
+/version.json
+  Cache-Control: no-store, max-age=0
+/downloads/*
+  Cache-Control: public, max-age=3600
+  X-Robots-Tag: noindex
+/extension/*
+  X-Robots-Tag: noindex
+/tools/*
+  X-Robots-Tag: noindex
+/tests/*
+  X-Robots-Tag: noindex

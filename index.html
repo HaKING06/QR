@@ -1,116 +1,12 @@
-<!DOCTYPE html>
-<html lang="tr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>QR Scanner - The Professional Tool</title>
-    <meta name="description" content="Tarayıcı tabanlı, güvenli QR okuyucu ve oluşturucu.">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-    <link rel="icon" type="image/png" href="assets/icon.png">
-</head>
-<body class="home-page">
-
-    <nav class="navbar">
-        <div class="container nav-inner">
-            <div class="logo-group">
-                <img src="assets/icon.png" alt="Logo" class="nav-logo">
-                <span class="nav-title">QR Scanner</span>
-            </div>
-            <div class="nav-right">
-                <a href="https://haking.tr/" target="_blank" class="dev-link">halitguns06.dev</a>
-            </div>
-        </div>
-    </nav>
-
-    <header class="hero">
-        <div class="container hero-container">
-            
-            <div class="hero-content fade-in-up">
-                <h1 class="hero-title">
-                    QR İşlerinizi<br>
-                    <span class="gradient-text-highlight">Basitleştirdik</span>
-                </h1>
-                
-                <p class="hero-desc gradient-text-subtle">
-                    Ekrandaki her QR'ı okuyun, saniyeler içinde yenisini oluşturun. Verileriniz asla cihazınızı terk etmez. <br> Hız ve gizlilik bir arada.
-                </p>
-                
-                <div class="cta-wrapper">
-                    <a href="https://microsoftedge.microsoft.com/addons/detail/qr-scanner/klblmhlgnbnclpdhddadkbbccmdjknmf" onclick="alert('Bu sayfayı Microsoft Edge ile açmanı öneriyoruz.')" target="_blank" class="btn btn-primary btn-shine">
-                        <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
-                        <span>Edge'e Ekle</span>
-                    </a>
-                    <a href="#" onclick="downloadAndRedirect()" class="btn btn-secondary btn-shine">
-                        <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
-                        </svg>
-                        <span>Chrome (Zip)</span>
-                    </a>
-                </div>
-
-                <div class="chrome-guide-link">
-                    Kurulum yardımı mı lazım? <a href="help.html">Rehbere Git &rarr;</a>
-                </div>
-            </div>
-
-            <div class="hero-visual fade-in-up delay-200">
-                <div class="glow-effect"></div> 
-                <div class="browser-window">
-                    <div class="window-header">
-                        <div class="dots"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span></div>
-                        <div class="address-bar">qr-scanner-extension</div>
-                    </div>
-                    <div class="window-body">
-                        <div class="app-mockup">
-                            <div class="mock-header">
-                                <img src="assets/icon.png" width="20"> 
-                                <span>QR Scanner</span>
-                            </div>
-                            <div class="mock-nav-wrapper">
-                                <div class="mock-nav-segment">
-                                    <div class="mock-tab active">Okuyucu</div>
-                                    <div class="mock-tab">Oluşturucu</div>
-                                </div>
-                            </div>
-                            <div class="mock-content">
-                                <div class="mock-drop-zone">
-                                    <div class="mock-icon-box">
-                                        <svg width="32" height="32" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
-                                    </div>
-                                    <div class="mock-text">
-                                        Görseli Yapıştır <b>(Ctrl+V)</b><br>
-                                        <span style="font-size:11px; color:#94a3b8;">veya seçmek için tıklayın</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="mock-footer">halitguns06.dev</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    </header>
-
-    <footer class="footer fade-in-up delay-400">
-        <div class="container footer-inner">
-            <p>&copy; 2026 QR Scanner</p>
-            <a href="https://haking.tr/" target="_blank" class="signature">Designed by <strong>halitguns06.dev</strong></a>
-        </div>
-    </footer>
-
-    <script>
-        function downloadAndRedirect() {
-            const link = document.createElement('a');
-            link.href = 'QR-Scanner-v1.zip';
-            link.download = 'QR-Scanner-v1.zip';
-            document.body.appendChild(link);
-            link.click();
-            document.body.removeChild(link);
-            setTimeout(() => { window.location.href = 'help.html'; }, 500);
-        }
-    </script>
-
-</body>
-</html>
+<!doctype html><html lang="tr" data-page="index"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>QR kod oluştur &amp; QR oku — QR Scanner</title><meta name="description" content="Oluştur, oku, paylaş. Tarayıcında çalışan sade, gizliliğe önem veren QR araçların. Tarayıcıdan ayrılmadan görselleri oku, açık sekmeyi tara ve QR kodlar oluştur."><link rel="canonical" href="https://qr.haking.tr/"><link rel="alternate" hreflang="en" href="https://qr.haking.tr/en/"><link rel="alternate" hreflang="tr" href="https://qr.haking.tr/tr/"><link rel="alternate" hreflang="de" href="https://qr.haking.tr/de/"><link rel="alternate" hreflang="es" href="https://qr.haking.tr/es/"><link rel="alternate" hreflang="fr" href="https://qr.haking.tr/fr/"><link rel="alternate" hreflang="pt" href="https://qr.haking.tr/pt/"><link rel="alternate" hreflang="x-default" href="https://qr.haking.tr/"><meta name="theme-color" content="#087f73"><meta property="og:type" content="website"><meta property="og:title" content="QR kod oluştur &amp; QR oku — QR Scanner"><meta property="og:description" content="Oluştur, oku, paylaş. Tarayıcında çalışan sade, gizliliğe önem veren QR araçların. Tarayıcıdan ayrılmadan görselleri oku, açık sekmeyi tara ve QR kodlar oluştur."><meta property="og:url" content="https://qr.haking.tr/tr/"><meta property="og:image" content="https://qr.haking.tr/assets/brand/social-card.png"><meta name="twitter:card" content="summary_large_image"><link rel="icon" href="/assets/brand/favicon.ico"><link rel="icon" type="image/svg+xml" href="/assets/brand/logo.svg"><link rel="apple-touch-icon" href="/assets/brand/icon-192.png"><link rel="stylesheet" href="/style.css"><script src="/shared/preferences.js"></script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "QR Scanner", "url": "https://qr.haking.tr/tr/", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "inLanguage": "tr", "description": "Oluştur, oku, paylaş. Tarayıcında çalışan sade, gizliliğe önem veren QR araçların. Tarayıcıdan ayrılmadan görselleri oku, açık sekmeyi tara ve QR kodlar oluştur.", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "author": {"@type": "Person", "name": "Halit (HaKING)", "url": "https://haking.tr/"}}</script></head><body><a href="#main" class="skip"><span data-i18n="skip">Araçlara geç</span></a><header class="site-header"><div class="container nav"><a class="brand" href="./"><img src="/assets/brand/logo.svg" width="36" height="36" alt=""><span>QR Scanner<small>BY HAKING</small></span></a><nav aria-label="Main"><a class="" href="#toolkit"><span data-i18n="navCreate">QR oluştur</span></a><a class="" href="#extension"><span data-i18n="navExtension">Uzantı</span></a><a class="" href="about.html"><span data-i18n="navAbout">Hakkında</span></a></nav><div class="preferences"><select id="language" aria-label="Language"><option value="auto">◎ Auto</option><option value="tr">Türkçe</option><option value="en">English</option><option value="de">Deutsch</option><option value="es">Español</option><option value="fr">Français</option><option value="pt">Português</option></select><select id="theme" aria-label="Theme"><option value="auto" data-i18n="auto">System</option><option value="light" data-i18n="light">Light</option><option value="dark" data-i18n="dark">Dark</option></select></div></div></header><main id="main"><section class="hero container"><div class="hero-kicker"><span class="live-dot"></span> <span data-i18n="eyebrow">KÜÇÜK BİR KOD. SAYISIZ OLASILIK.</span></div><h1><span data-i18n="title">Bir QR. Birçok olasılık.</span></h1><p><span data-i18n="subtitle">Oluştur, oku, paylaş. Tarayıcında çalışan sade, gizliliğe önem veren QR araçların.</span></p><div class="hero-notes"><span>✓ <span data-i18n="free">Tamamen ücretsiz</span></span><span>✓ <span data-i18n="local">Gizlilik öncelikli</span></span><span>✓ PNG & SVG</span></div></section><div class="container"><section class="tool card" id="toolkit" aria-label="QR toolkit">
+ <div class="tool-tabs" role="tablist"><button id="create-tab" role="tab" aria-controls="create-panel" aria-selected="true">◧ <span data-i18n="navCreate">QR oluştur</span></button><button id="read-tab" role="tab" aria-controls="read-panel" aria-selected="false">⌕ <span data-i18n="navRead">QR oku</span></button></div>
+ <div id="create-panel" role="tabpanel" aria-labelledby="create-tab"><div class="tool-grid"><form id="generator"><div class="section-tag">01 / QR STUDIO</div><h2><span data-i18n="toolTitle">Paylaşmaya değer bir şey oluştur.</span></h2><p class="muted"><span data-i18n="toolDesc">Türünü seç, içeriğini ekle. QR kodun saniyeler içinde hazır.</span></p>
+ <label for="type"><span data-i18n="create">QR kod oluştur</span></label><select id="type"><option value="url" data-i18n="url">Web sitesi</option><option value="text" data-i18n="text">Metin</option><option value="wifi" data-i18n="wifi">Wi-Fi</option><option value="email" data-i18n="email">E-posta</option></select>
+ <label for="content"><span data-i18n="content">İçeriğin</span></label><textarea id="content" rows="3" maxlength="2000" placeholder="https://example.com" required spellcheck="false"></textarea>
+ <div id="wifi-fields" hidden><label for="password"><span data-i18n="password">Şifre</span></label><input type="password" id="password" maxlength="128" autocomplete="off"><label for="security"><span data-i18n="security">Güvenlik</span></label><select id="security"><option value="WPA">WPA / WPA2 / WPA3</option><option value="WEP">WEP</option><option value="nopass">Open / Açık</option></select></div>
+ <div id="email-fields" hidden><label for="subject"><span data-i18n="subject">Konu</span></label><input id="subject" maxlength="200"></div>
+ <div class="field-row"><div><label for="size"><span data-i18n="size">Çıktı boyutu</span></label><select id="size"><option>512</option><option selected>1024</option><option>2048</option></select></div><div><label for="color"><span data-i18n="color">QR rengi</span></label><select id="color"><option value="#142724">Graphite</option><option value="#087f73">Teal</option><option value="#153d8a">Blue</option><option value="#582c83">Violet</option></select></div></div>
+ <button class="button primary wide" type="submit"><span data-i18n="generate">QR oluştur</span> <span aria-hidden="true">↗</span></button></form>
+ <div class="preview"><span class="section-tag">LIVE PREVIEW</span><div class="qr-paper" id="qr-preview" role="img" aria-label="QR preview"><span class="placeholder-mark" aria-hidden="true">▦</span></div><h3><span data-i18n="preview">QR kodun, kullanıma hazır.</span></h3><p class="muted"><span data-i18n="previewNote">Net, yüksek çözünürlüklü QR. Hesap yok. Filigran yok.</span></p><div class="exports"><button class="button primary" id="png" disabled>↓ <span data-i18n="png">PNG indir</span></button><button class="button secondary" id="svg" disabled>↓ SVG</button></div><button class="text-button" id="clear" type="button"><span data-i18n="clear">Temizle</span></button></div></div></div>
+ <div id="read-panel" role="tabpanel" aria-labelledby="read-tab" hidden><div class="reader"><div class="section-tag">02 / QR READER</div><h2><span data-i18n="scanTitle">İçinde ne olduğunu gör.</span></h2><p class="muted"><span data-i18n="scanDesc">Bir görsel yükle, sürükle veya yapıştır. İçeriği cihazında kalır.</span></p><div class="drop-zone" id="drop-zone"><div class="upload-icon" aria-hidden="true">↥</div><p><span data-i18n="drop">Görseli buraya bırak veya Ctrl / ⌘ + V ile yapıştır</span></p><label class="button secondary" for="file"><span data-i18n="choose">Görsel seç</span></label><input type="file" id="file" accept="image/png,image/jpeg,image/webp" class="file-input"><small><span data-i18n="imageOnly">PNG, JPEG, WebP · en fazla 15 MB</span></small></div><button id="screenshot" class="button secondary wide" hidden><span data-i18n="screenshot">Açık sekmeyi tara</span></button><div id="scan-result" hidden><label for="result"><span data-i18n="result">Okunan içerik</span></label><textarea id="result" rows="4" readonly></textarea><p class="muted"><span data-i18n="linkNote">Açmadan önce hedefi kontrol et. HTTPS, sitenin güvenilir olduğunu garanti etmez.</span></p><div class="exports"><button id="copy" class="button secondary"><span data-i18n="copy">Metni kopyala</span></button><a id="open" class="button primary" target="_blank" rel="noopener noreferrer" hidden><span data-i18n="open">Bağlantıyı aç</span></a></div></div></div></div>
+ <div class="tool-bottom"><span class="live-dot"></span> <span data-i18n="local">Gizlilik öncelikli</span> <span class="bottom-right">QR Scanner · v1.1.1</span></div></section><section class="features"><article><div class="feature-icon">◈</div><h3><span data-i18n="local">Gizlilik öncelikli</span></h3><p><span data-i18n="localDesc">Görsellerin ve QR içeriklerin kendi cihazında işlenir.</span></p></article><article><div class="feature-icon">↗</div><h3><span data-i18n="export">Her boyuta hazır</span></h3><p><span data-i18n="exportDesc">Paylaşmak için PNG. Keskin baskılar için SVG.</span></p></article><article><div class="feature-icon">∞</div><h3><span data-i18n="noExpiry">Daima senin</span></h3><p><span data-i18n="noExpiryDesc">Statik QR kodlar. Süre sınırı ve yönlendirme hizmeti yok.</span></p></article></section><section id="extension" class="extension-card"><div><div class="section-tag">03 / BROWSER COMPANION · v1.1.1</div><h2><span data-i18n="extensionTitle">QR araçların. Bir tık uzağında.</span></h2><p><span data-i18n="extensionDesc">Tarayıcıdan ayrılmadan görselleri oku, açık sekmeyi tara ve QR kodlar oluştur.</span></p><div class="exports"><a class="button primary" href="https://microsoftedge.microsoft.com/addons/detail/qr-scanner/klblmhlgnbnclpdhddadkbbccmdjknmf"><span data-i18n="edge">Edge için yükle</span></a><a class="button secondary" href="/downloads/qr-scanner-1.1.1-chromium.zip"><span data-i18n="download">v1.1.1 ZIP indir</span></a></div><p><a href="/downloads/qr-scanner-1.1.1-firefox.zip">Firefox ZIP ↗</a> · <a class="" href="help.html"><span data-i18n="install">Kurulum rehberi</span></a></p><small><span data-i18n="downloadNote">Edge mağazasındaki sürüm farklı olabilir. ZIP paketleri v1.1.1 içerir. Firefox ZIP, imzalanana kadar geçici test içindir.</span></small><p class="muted"><span data-i18n="compat">Chrome, Edge, Brave ve Opera: Chromium paketi. Firefox: ayrı paket. Safari için Apple derlemesi gerekir.</span></p></div><div class="extension-art" aria-hidden="true"><img src="/assets/brand/logo.svg" width="112" height="112" alt=""><span>QR Scanner</span><small>YOUR BROWSER. YOUR TOOLKIT.</small><div class="mini-tabs">◧ CREATE <span>⌕ SCAN</span></div><div class="browser-tags">Chrome · Edge · Firefox<br>Brave · Opera</div></div></section><section class="faq" id="faq"><div class="section-tag">04 / GOOD TO KNOW</div><h2><span data-i18n="faqTitle">Aklındaki sorular.</span></h2><details><summary><span data-i18n="q1">QR kodlarımın süresi dolar mı?</span></summary><p><span data-i18n="a1">Statik QR kodların son kullanma tarihi yoktur. Hedef web sitesinin erişilebilir kalması gerekir.</span></p></details><details><summary><span data-i18n="q2">Dosyalarım yükleniyor mu?</span></summary><p><span data-i18n="a2">Hayır. Görseller, metinler ve Wi-Fi şifreleri yerel olarak işlenir. Yalnızca uzantının sürüm kontrolü qr.haking.tr adresine bağlanır.</span></p></details><details><summary><span data-i18n="q3">QR kodumu özelleştirebilir miyim?</span></summary><p><span data-i18n="a3">Renk ve çıktı boyutunu seçebilirsin. PNG ve SVG dosyalarında kolay okuma için dört modüllük beyaz kenar boşluğu bulunur.</span></p></details><details><summary><span data-i18n="q4">Hangi tarayıcılar destekleniyor?</span></summary><p><span data-i18n="a4">Siteyi güncel tarayıcılarda kullanabilirsin. Edge mağaza bağlantısı mevcut; Chromium ZIP paketleri elle kurulabilir. Firefox kalıcı kurulum için imza gerektirir.</span></p></details></section><section class="about-strip"><h2><span data-i18n="aboutTitle">Faydalı araçlar. Daha az uğraş.</span></h2><p><span data-i18n="aboutDesc">QR Scanner, HaKING (Halit) tarafından geliştirilen açık kaynaklı bir projedir. Günlük QR işlemlerini hızlı, erişilebilir ve gizli hale getirir. Web sitesi, metin, Wi-Fi ve e-posta QR kodları oluşturabilir, görsellerdeki kodları okuyabilirsin.</span></p><a class="text-button" href="about.html"><span data-i18n="navAbout">Hakkında</span></a></section></div></main><footer class="container footer"><div class="brand-text">QR Scanner <small>v1.1.1 · © 2026 HaKING</small><p><span data-i18n="footerTag">Oku. Oluştur. Devam et.</span></p></div><div><a class="" href="about.html"><span data-i18n="navAbout">Hakkında</span></a><a class="" href="privacy.html"><span data-i18n="privacy">Gizlilik</span></a><a class="" href="help.html"><span data-i18n="install">Kurulum rehberi</span></a><a class="" href="https://github.com/HaKING06/QR"><span data-i18n="source">Kaynak kod</span></a><a class="" href="https://github.com/HaKING06/QR/blob/main/CHANGELOG.md"><span data-i18n="release">Sürüm notları</span></a></div></footer><p id="status" role="status" aria-live="polite"></p><script src="/vendor/qrcode.js" defer></script><script src="/vendor/jsQR.js" defer></script><script src="/shared/core.js" defer></script><script src="/shared/i18n.js" defer></script><script src="/shared/app.js" defer></script></body></html>

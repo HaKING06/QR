@@ -1,0 +1,12 @@
+node_modules/
+.original-extension/
+__pycache__/
+*.pyc
+.env
+.env.*
+!.env.example
+test-results/
+.playwright-mcp/
+dist/
+.DS_Store
+Thumbs.db

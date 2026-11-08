@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /extension/
+Disallow: /tools/
+Disallow: /tests/
+Sitemap: https://qr.haking.tr/sitemap.xml
