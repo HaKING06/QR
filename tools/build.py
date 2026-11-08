@@ -2,6 +2,7 @@
 from pathlib import Path
 import hashlib,html,json,shutil,zipfile
 import templates as ui
+from edge_package import prepare_edge
 ROOT=Path(__file__).resolve().parents[1]
 VERSION=json.loads((ROOT/'package.json').read_text(encoding='utf-8'))['version']
 LOCALES=json.loads((ROOT/'shared/locales.json').read_text(encoding='utf-8'))
@@ -83,4 +84,4 @@ def build_extension():
     (ROOT/'version.json').write_text(json.dumps({'version':VERSION,'released':'2026-11-08','url':'https://qr.haking.tr/#extension','downloads':hashes},indent=2),encoding='utf-8')
 
 if __name__=='__main__':
-    build_site();build_extension();print('Built localized site and browser packages v'+VERSION)
+    build_site();build_extension();prepare_edge();print('Built localized site and browser packages v'+VERSION)

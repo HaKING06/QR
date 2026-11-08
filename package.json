@@ -7,7 +7,8 @@
     "test": "node --test tests/core.test.cjs",
     "build": "node tools/browser-icons.cjs && python tools/build.py",
     "check": "python tools/check.py",
-    "build:static": "node tools/prepare-static.cjs"
+    "build:static": "node tools/prepare-static.cjs",
+    "build:edge-assets": "python tools/edge_assets.py"
   },
   "keywords": [],
   "author": "Halit (HaKING)",

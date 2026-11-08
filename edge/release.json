@@ -1,0 +1,7 @@
+{
+  "version": "1.1.2",
+  "package": "qr-scanner-1.1.2-edge.zip",
+  "sha256": "a334d1f7528095de65a49c9036ffe1fe2cf94e105b7c2ea3f3579a38a1f2df62",
+  "source": "downloads/qr-scanner-1.1.2-chromium.zip",
+  "automatic_publication": false
+}

@@ -9,9 +9,10 @@
    ZIP temporarily. Check generation, image scanning, screenshots, permissions,
    language/theme persistence and offline behavior.
 5. Verify `downloads/SHA256SUMS.txt`. ZIP root must contain `manifest.json`.
-6. Commit source and generated static pages/packages to the production branch.
-   Existing GitHub/Cloudflare Workers integration publishes the site; verify live version.
-7. Upload Chromium package through the owner's Edge dashboard and separately
+6. Copy source and generated pages/packages to the user's existing GitHub checkout.
+   Stop before commit/push/tag/deployment. The user performs the final review and public
+   publication. Existing GitHub/Cloudflare integration runs when the user pushes.
+7. The user uploads `edge/qr-scanner-<version>-edge.zip` through the Edge dashboard and separately
    submit to Chrome Web Store if desired. Firefox needs Mozilla signing. Safari
    needs an Apple development environment. Website publication does not publish stores.
 
@@ -32,3 +33,8 @@ Legacy archives, old root icons and obsolete standalone extension scripts were
 removed in 1.1.2. Git history retains release history. When updating the loaded
 extension folder, remove stale files that are absent from generated `extension/`
 and reload it on the browser's extensions page.
+
+`edge/` is the store submission handoff folder. Every build refreshes its ZIP
+and checksums. `npm run build:edge-assets` regenerates the store-sized logo
+and promotional images when the brand changes. Do not include this folder in
+the public website build. No automatic publishing is authorized.

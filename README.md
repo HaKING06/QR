@@ -68,6 +68,14 @@ asset script (Pillow dependency only for that optional workflow).
 
 ## Release and deployment
 
+The assistant prepares local files and copies them into the existing GitHub
+checkout. The owner performs final review, Git push and public publication.
+No automatic commit, push, release tag or deployment is authorized.
+
+For Edge submission use [edge/README.md](edge/README.md). `npm run build`
+refreshes the Edge ZIP in that folder; `npm run build:edge-assets` regenerates
+the 300×300 store logo, icon variants and 440×280 / 1400×560 promotional assets.
+
 Read [RELEASING.md](RELEASING.md). This repository retains root `index.html`
 compatibility with the existing site and local preview. The actual production
 host is the GitHub-connected Cloudflare Worker named `qr`.

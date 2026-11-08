@@ -1,0 +1,25 @@
+QR Scanner — v1.1.2
+
+Name: QR Scanner
+
+Short description:
+Lisez des images, scannez l’onglet actuel et créez des codes QR sans quitter votre navigateur.
+
+Description:
+Lisez des images, scannez l’onglet actuel et créez des codes QR sans quitter votre navigateur.
+
+Site web, Texte, Wi-Fi, E-mail, Téléphone, SMS, Fiche de contact.
+
+QR de cet onglet. Scanner l’onglet actuel.
+
+Le PNG pour partager. Le SVG pour des impressions nettes à toute taille.
+
+Des codes QR statiques. Sans expiration ni service de redirection.
+
+Le contenu des QR n’est jamais envoyé à nos serveurs. Aucune analyse d’audience, aucun cookie de suivi ni historique QR. Vos préférences de thème et de langue restent sur votre appareil. Les hébergeurs peuvent traiter les journaux de connexion habituels.
+
+Vérifiez la destination avant de l’ouvrir. HTTPS ne garantit pas la fiabilité d’un site.
+
+Website: https://qr.haking.tr/
+Privacy policy: https://qr.haking.tr/fr/privacy.html
+Support: qr@haking.tr

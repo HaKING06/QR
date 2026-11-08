@@ -1,0 +1,25 @@
+QR Scanner — v1.1.2
+
+Name: QR Scanner
+
+Short description:
+Tarayıcıdan ayrılmadan görselleri oku, açık sekmeyi tara ve QR kodlar oluştur.
+
+Description:
+Tarayıcıdan ayrılmadan görselleri oku, açık sekmeyi tara ve QR kodlar oluştur.
+
+Web sitesi, Metin, Wi-Fi, E-posta, Telefon, SMS, Kişi kartı.
+
+Bu sekmenin QR kodu. Açık sekmeyi tara.
+
+Paylaşmak için PNG. Keskin baskılar için SVG.
+
+Statik QR kodlar. Süre sınırı ve yönlendirme hizmeti yok.
+
+QR içerikleri sunucularımıza gönderilmez. Analiz, takip çerezi veya QR geçmişi yoktur. Tema ve dil tercihleri cihazında saklanır. Barındırma sağlayıcıları standart bağlantı kayıtlarını işleyebilir.
+
+Açmadan önce hedefi kontrol et. HTTPS, sitenin güvenilir olduğunu garanti etmez.
+
+Website: https://qr.haking.tr/
+Privacy policy: https://qr.haking.tr/tr/privacy.html
+Support: qr@haking.tr
