@@ -1,7 +1,9 @@
 (async () => {
   'use strict';
-  let t;
-  try { ({t}=await window.QRI18n); } catch { t=k=>k; }
+  // Bind controls synchronously: the first interaction must not wait on a
+  // translation fetch (especially on a fresh CDN edge or slow connection).
+  let t=k=>document.querySelector(`[data-i18n="${k}"]`)?.textContent||k;
+  window.QRI18n?.then(locale=>{t=locale.t;}).catch(()=>{});
   const $=id=>document.getElementById(id), api=globalThis.browser||globalThis.chrome;
   let toastTimer, qr=null, generated='', scanJob=0;
   function status(key){const el=$('status');el.textContent=t(key);el.classList.add('visible');clearTimeout(toastTimer);toastTimer=setTimeout(()=>el.classList.remove('visible'),4500);}
