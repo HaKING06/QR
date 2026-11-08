@@ -1,9 +1,9 @@
 {
-  "version": "1.1.1",
+  "version": "1.1.2",
   "released": "2026-11-08",
   "url": "https://qr.haking.tr/#extension",
   "downloads": {
-    "qr-scanner-1.1.1-chromium.zip": "da794e0e3f1103260bc35087621d089ec9620e1b983f46d0ffcec3839ba6c8ee",
-    "qr-scanner-1.1.1-firefox.zip": "21438c153ac7139095ec2a9c861f4dda21864deaa73e3fa606a22faec9c6945e"
+    "qr-scanner-1.1.2-chromium.zip": "a334d1f7528095de65a49c9036ffe1fe2cf94e105b7c2ea3f3579a38a1f2df62",
+    "qr-scanner-1.1.2-firefox.zip": "a2c45b5ea940d066c6f49714d76cc056dcc01cbd414ea34eaf7b8e77c5ee2cac"
   }
 }

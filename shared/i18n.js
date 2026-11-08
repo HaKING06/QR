@@ -1,32 +1,53 @@
-window.QRI18n = (async () => {
+(() => {
+  'use strict';
   const localeURL=new URL('locales.json',document.currentScript.src);
-  const supported=new Set(['tr','en','de','es','fr','pt']);
-  const stored=(()=>{try{return localStorage.getItem('qr-language')||'auto';}catch{return 'auto';}})();
+  const languages=['tr','en','de','es','fr','pt'];
+  const popup=document.documentElement.dataset.extension==='true';
+  const read=(key,fallback)=>{try{return localStorage.getItem(key)||fallback;}catch{return fallback;}};
+  const save=(key,value)=>{try{localStorage.setItem(key,value);}catch{}};
+  const preferred=(navigator.languages||[navigator.language]).map(value=>value.split('-')[0]).find(value=>languages.includes(value))||'en';
   const segment=location.pathname.split('/')[1];
-  const preferred=(navigator.languages||[navigator.language]).map(x=>x.split('-')[0]).find(x=>supported.has(x))||'en';
-  const lang=supported.has(segment)?segment:(supported.has(stored)?stored:preferred);
-  // Localized pages are real HTML so search engines can index each language.
-  if (!globalThis.chrome?.runtime?.id && !globalThis.browser?.runtime?.id && !supported.has(segment) && lang!=='tr') {
-    const page=location.pathname.split('/').pop()||'';
-    location.replace('/'+lang+'/'+page+location.search+location.hash);
+  let choice=read('qr-language','auto');
+  if(!['auto',...languages].includes(choice))choice='auto';
+  let language=!popup&&languages.includes(segment)?segment:choice==='auto'?preferred:choice;
+  let theme=read('qr-theme','auto'), dictionaries=null;
+  if(!['auto','light','dark'].includes(theme))theme='auto';
+  const fallback={empty:'Enter your content first.',invalid:'Please check your content.',tooLong:'Content is too long for a QR code.',ready:'Your QR is ready.',copied:'Copied.',copyError:'Copy unavailable. Try downloading instead.',notFound:'No QR code found. Try a clearer image.',badFile:'Choose a PNG, JPEG or WebP image up to 15 MB.',fileError:'The image could not be read.',scanning:'Reading image…',cameraError:'Camera unavailable. Check permission.',screenError:'This tab cannot be captured.',engineError:'The QR engine could not load. Reopen the page or extension.'};
+  const text=key=>dictionaries?.[language]?.[key]||dictionaries?.en?.[key]||document.querySelector(`[data-i18n="${key}"]`)?.textContent||fallback[key]||key;
+  window.QRText=text;
+
+  function translate(){
+    document.documentElement.lang=language;
+    if(dictionaries)document.querySelectorAll('[data-i18n]').forEach(node=>{node.textContent=text(node.dataset.i18n);});
+    document.querySelectorAll('[data-language]').forEach(button=>button.setAttribute('aria-checked',String(button.dataset.language===(popup?choice:language))));
+    document.getElementById('language-label').textContent=language.toUpperCase();
+    document.dispatchEvent(new CustomEvent('qr:locale',{detail:{language}}));
   }
-  document.documentElement.lang=lang;
-  const select=document.getElementById('language');
-  if(select){select.value=supported.has(segment)?lang:stored;select.onchange=()=>{
-    try {localStorage.setItem('qr-language',select.value);}catch{}
-    if(globalThis.chrome?.runtime?.id||globalThis.browser?.runtime?.id)location.reload();
-    else {const next=select.value==='auto'?preferred:select.value;const page=location.pathname.split('/').pop()||'';location.assign('/'+next+'/'+page+location.search+location.hash);}
-  };}
-  const theme=document.getElementById('theme');
-  if(theme){try{theme.value=localStorage.getItem('qr-theme')||'auto';}catch{}
-    const apply=()=>{const value=theme.value;document.documentElement.dataset.theme=value==='auto'?(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'):value;};
-    theme.onchange=()=>{try{localStorage.setItem('qr-theme',theme.value);}catch{}apply();};
-    matchMedia('(prefers-color-scheme: dark)').addEventListener('change',()=>{if(theme.value==='auto')apply();});
+  function applyTheme(){
+    document.documentElement.dataset.theme=theme==='auto'?(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'):theme;
+    document.querySelectorAll('[data-theme-choice]').forEach(button=>button.setAttribute('aria-checked',String(button.dataset.themeChoice===theme)));
+    const glyph=document.querySelector(`[data-theme-choice="${theme}"]>.icon`);
+    if(glyph)document.getElementById('theme-icon')?.replaceChildren(glyph.cloneNode(true));
   }
-  const res=await fetch(localeURL);
-  if (!res.ok) throw new Error('Translations unavailable');
-  const locales=await res.json();
-  const t=k=>locales[lang][k]||locales.en[k]||k;
-  document.querySelectorAll('[data-i18n]').forEach(el=>{el.textContent=t(el.dataset.i18n);});
-  return {t,lang};
+  function closeMenus(){document.querySelectorAll('.pref-menu').forEach(menu=>{menu.open=false;});}
+  document.querySelectorAll('[data-language]').forEach(button=>button.addEventListener('click',()=>{
+    choice=button.dataset.language;save('qr-language',choice);language=choice==='auto'?preferred:choice;closeMenus();
+    if(popup){translate();return;}
+    const parts=location.pathname.split('/').filter(Boolean);
+    if(languages.includes(parts[0]))parts.shift();
+    location.assign('/'+language+'/'+parts.join('/')+location.search+location.hash);
+  }));
+  document.querySelectorAll('[data-theme-choice]').forEach(button=>button.addEventListener('click',()=>{theme=button.dataset.themeChoice;save('qr-theme',theme);applyTheme();closeMenus();}));
+  document.querySelectorAll('.pref-menu').forEach(menu=>menu.addEventListener('toggle',()=>{if(menu.open)document.querySelectorAll('.pref-menu').forEach(other=>{if(other!==menu)other.open=false;});}));
+  document.addEventListener('click',event=>{if(!event.target.closest('.pref-menu'))closeMenus();});
+  document.addEventListener('keydown',event=>{
+    if(event.key==='Escape'){const menu=document.querySelector('.pref-menu[open]');closeMenus();menu?.querySelector('summary').focus();}
+    if(['ArrowDown','ArrowUp'].includes(event.key)&&event.target.closest('.pref-options')){
+      const buttons=[...event.target.closest('.pref-options').querySelectorAll('button')];const index=buttons.indexOf(event.target);buttons[(index+(event.key==='ArrowDown'?1:-1)+buttons.length)%buttons.length].focus();event.preventDefault();
+    }
+  });
+  matchMedia('(prefers-color-scheme: dark)').addEventListener('change',()=>{if(theme==='auto')applyTheme();});
+  applyTheme();translate();
+  if(!popup&&!languages.includes(segment)&&language!=='tr')location.replace('/'+language+location.pathname+location.search+location.hash);
+  window.QRI18n=fetch(localeURL).then(response=>{if(!response.ok)throw new Error('Translations unavailable');return response.json();}).then(value=>{dictionaries=value;translate();return {t:text,lang:language};}).catch(()=>({t:text,lang:language}));
 })();

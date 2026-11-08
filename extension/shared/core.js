@@ -5,7 +5,8 @@
     if (type === 'wifi') {
       const escape = s => String(s || '').replace(/([\\;,:\"])/g, '\\$1');
       if (!text) throw new Error('empty');
-      return `WIFI:T:${values.security || 'WPA'};S:${escape(text)};P:${escape(values.password)};H:false;;`;
+      const security=['WPA','WEP','nopass'].includes(values.security)?values.security:'WPA';
+      return `WIFI:T:${security};S:${escape(text)};P:${security==='nopass'?'':escape(values.password)};H:${values.hidden?'true':'false'};;`;
     }
     if (!text) throw new Error('empty');
     if (type === 'url') {
@@ -16,6 +17,17 @@
     if (type === 'email') {
       if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(text)) throw new Error('invalid');
       return 'mailto:' + text + '?subject=' + encodeURIComponent(values.subject || '');
+    }
+    if (type === 'phone' || type === 'sms') {
+      if (!/^\+?[\d\s().-]{3,40}$/.test(text)) throw new Error('invalid');
+      const phone=text.replace(/[\s().-]/g,'');
+      if (!/^\+?\d{3,20}$/.test(phone)) throw new Error('invalid');
+      return type==='phone'?'tel:'+phone:'SMSTO:'+phone+':'+(values.message||'');
+    }
+    if (type === 'vcard') {
+      const escape=s=>String(s||'').replace(/\\/g,'\\\\').replace(/\r?\n/g,'\\n').replace(/;/g,'\\;').replace(/,/g,'\\,');
+      if (values.email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(values.email)) throw new Error('invalid');
+      return ['BEGIN:VCARD','VERSION:3.0','FN:'+escape(text),'N:;'+escape(text)+';;;','ORG:'+escape(values.organization),'TEL:'+escape(values.phone),'EMAIL:'+escape(values.email),'END:VCARD'].join('\r\n');
     }
     return text;
   }

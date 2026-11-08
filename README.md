@@ -8,20 +8,24 @@
 ## Türkçe
 
 QR Scanner; ücretsiz QR kod oluşturma, QR kod okuma ve tarayıcı uzantısını
-bir araya getiren açık kaynaklı bir projedir. Web sitesi, metin, Wi-Fi ve
-e-posta QR kodları oluşturur. PNG/SVG dışa aktarma, sürükleyip bırakma,
+bir araya getiren açık kaynaklı bir projedir. Web sitesi, metin, Wi-Fi,
+e-posta, telefon, SMS ve kişi kartı QR kodları oluşturur. PNG/SVG dışa aktarma, sürükleyip bırakma,
 görsel yapıştırma, otomatik dil, açık/koyu/sistem temaları desteklenir.
 QR içeriği ve görseller cihazda işlenir. Hesap ve filigran yoktur.
 
-**Sürüm: 1.1.1.** Önceki ZIP dosyası v1 adı taşısa da manifesti 1.1.0'dır;
-mağaza sürümünü geriye düşürmemek için 1.1.1 kullanılmıştır.
+**Sürüm: 1.1.2.** Yenilenen site, bağımsız 390px uzantı arayüzü,
+okunaklı dil/tema menüleri ve tarayıcıya özel kurulum akışı.
+İletişim: [qr@haking.tr](mailto:qr@haking.tr).
 
 ## Features
 
-- Website/text/Wi-Fi/email QR generation with UTF-8 support.
+- Seven QR types, UTF-8, live preview, error correction and hidden Wi-Fi support.
 - PNG (512/1024/2048px) and scalable SVG; four-module quiet zone.
 - Local PNG/JPEG/WebP image scanning, paste and drag/drop (15 MB maximum).
 - Scan active browser tab in the extension with a user gesture.
+- Create a QR for the current tab; copy generated images to the clipboard.
+- On-demand local camera scanning on the website; camera stops after a result.
+- Every ZIP download opens the matching browser installation guide automatically.
 - Automatic browser language, manual language choice, persistent theme.
 - Static localized HTML, canonical/hreflang links, sitemap, structured data.
 - Extension only shows the update notice when the release is newer.
@@ -31,7 +35,7 @@ mağaza sürümünü geriye düşürmemek için 1.1.1 kullanılmıştır.
 
 | Platform | Installation/status |
 | --- | --- |
-| Edge | [Existing store listing](https://microsoftedge.microsoft.com/addons/detail/qr-scanner/klblmhlgnbnclpdhddadkbbccmdjknmf); submitting 1.1.1 requires the owner's store account. |
+| Edge | [Existing store listing](https://microsoftedge.microsoft.com/addons/detail/qr-scanner/klblmhlgnbnclpdhddadkbbccmdjknmf); submitting 1.1.2 requires the owner's store account. |
 | Chrome / Edge / Brave / Opera | Load the Chromium ZIP unpacked in Developer mode. Store listings are not implied. |
 | Firefox 142+ | Separate MV3 package with Gecko ID and no-data declaration. Temporary installation via about:debugging; Mozilla signing is required for permanent installation. |
 | Safari | Website works in modern Safari. Native extension conversion/signing with Xcode and Apple distribution is still required. No Safari package is claimed. |
@@ -39,7 +43,7 @@ mağaza sürümünü geriye düşürmemek için 1.1.1 kullanılmıştır.
 The extension requests `activeTab` for explicitly initiated screenshots and
 `https://qr.haking.tr/*` for version checks. No content scripts or broad
 browsing permissions. Version checks run on popup opening at most once per
-24 hours, send no QR contents, and silently tolerate being offline. Checks
+hour, send no QR contents, and silently tolerate being offline. Checks
 cannot be retroactively added to older installed versions.
 
 ## Development
@@ -56,9 +60,10 @@ python -m http.server 4173
 Open `http://localhost:4173`. `tools/build.py` renders all localized HTML,
 copies shared runtime into `extension/`, and creates Chromium/Firefox ZIPs
 and SHA-256 checksums in `downloads/`. `shared/locales.json` is the source
-for translations; `tools/localize.py` bootstraps Turkish and English;
-`tools/add_languages.py` adds the other languages. Do not rerun the bootstrap
-alone when retaining all languages. Branding can be rebuilt with its documented
+for translations. `tools/templates.py` contains website and compact popup layouts.
+`shared/ui.css` holds design tokens/controls; `style.css` is website-only and
+`popup.css` fixes actual browser-popup geometry without viewport-relative shrinking.
+Branding can be rebuilt with its documented
 asset script (Pillow dependency only for that optional workflow).
 
 ## Release and deployment
@@ -82,3 +87,11 @@ download packages. Python builds the committed release locally, not on hosting.
 See [CONTRIBUTING.md](CONTRIBUTING.md), [SECURITY.md](SECURITY.md),
 [CHANGELOG.md](CHANGELOG.md), [third-party notices](THIRD_PARTY_NOTICES.md).
 MIT © 2026 Halit (HaKING). [haking.tr](https://haking.tr/).
+
+## Verified for 1.1.2
+
+Website generation/decoding and overflow at 390px and 768px; all four non-store
+ZIP download-to-guide paths; real Chromium extension loading/generation/PNG
+download/decoding/language changes; camera decoding using an injected video
+fixture; Firefox package lint with zero errors and warnings. Store submission
+and Safari conversion remain separate distribution steps.

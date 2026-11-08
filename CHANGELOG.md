@@ -1,5 +1,20 @@
 # Changelog
 
+## 1.1.2 — 2026-11-08
+
+- Replace the teal identity with cobalt/navy branding and fresh PNG/SVG assets.
+- Separate popup CSS from website CSS; fix native popup shrinking caused by viewport-relative width constraints.
+- Introduce accessible, readable language and theme menus in both themes.
+- Rebuild the homepage, about, contact and per-browser installation layouts.
+- All ZIP buttons start the correct download and open its browser-specific guide.
+- Add phone, SMS and vCard generation, live previews, error-correction options and hidden Wi-Fi networks.
+- Add image clipboard export, current-tab QR generation and local website camera scanning.
+- Keep camera access on demand and stop the stream after reading or leaving.
+- Keep newer-version notices only; cache release checks for one hour.
+- Remove old root icons, legacy ZIPs, unused extension styles/scripts and outdated translation bootstrap files.
+- Use qr@haking.tr for support. Keep shared/locales.json as the translation source.
+- Verify the real Chromium extension context and lint the Firefox package.
+
 ## 1.1.1 — 2026-11-08
 
 - Replace download-only page with a responsive QR toolkit and localized pages.

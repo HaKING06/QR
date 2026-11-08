@@ -1,11 +1,11 @@
 {
   "name": "qr-scanner",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "private": true,
   "description": "Private multilingual QR scanner, generator and browser extension",
   "scripts": {
     "test": "node --test tests/core.test.cjs",
-    "build": "python tools/build.py",
+    "build": "node tools/browser-icons.cjs && python tools/build.py",
     "check": "python tools/check.py",
     "build:static": "node tools/prepare-static.cjs"
   },
@@ -16,5 +16,9 @@
   "dependencies": {
     "jsqr": "1.4.0",
     "qrcode-generator": "1.4.4"
+  },
+  "devDependencies": {
+    "@fortawesome/free-brands-svg-icons": "7.3.1",
+    "playwright": "1.65.0"
   }
 }

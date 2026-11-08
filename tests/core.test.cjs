@@ -20,6 +20,19 @@ test('payload validation and escaping',()=>{
  assert.equal(core.safeLink('data:text/html,test'),null);
  assert.equal(core.safeLink('https://example.com'),'https://example.com/');
 });
+test('phone, SMS, contact cards and hidden open Wi-Fi are encoded correctly',()=>{
+ assert.equal(core.payload('phone',{text:'+90 (555) 123-4567'}),'tel:+905551234567');
+ assert.equal(core.payload('sms',{text:'+1 555 0100',message:'Hello 😀'}),'SMSTO:+15550100:Hello 😀');
+ assert.throws(()=>core.payload('phone',{text:'javascript:alert(1)'}));
+ assert.throws(()=>core.payload('phone',{text:'---'}));
+ assert.equal(core.payload('wifi',{text:'Guest',security:'nopass',password:'must-not-leak',hidden:true}),'WIFI:T:nopass;S:Guest;P:;H:true;;');
+ const contact=core.payload('vcard',{text:'Ada; Lovelace',organization:'A,B',email:'ada@example.com',phone:'+44123'});
+ assert.ok(contact.includes('FN:Ada\\; Lovelace\r\n'));
+ assert.ok(contact.includes('ORG:A\\,B\r\n'));
+ assert.ok(contact.endsWith('END:VCARD'));
+ assert.throws(()=>core.payload('vcard',{text:'Ada',email:'invalid'}));
+ assert.equal(core.compareVersions('1.1.2','1.1.1'),1);
+});
 test('UTF-8 QR round-trips through the actual decoder with a quiet zone',()=>{
  qrcode.stringToBytes=qrcode.stringToBytesFuncs['UTF-8'];
  for(const value of ['https://qr.haking.tr/','Türkçe: ıİşğüöç — 日本語 😀','WIFI:T:WPA;S:Office;P:secret;;']){

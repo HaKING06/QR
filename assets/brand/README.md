@@ -1,18 +1,14 @@
-# QR Scanner brand assets
+# QR Scanner v1.1.2 identity
 
-Palette: teal `#087f73`, cream `#f7f8f4`, ink `#142724`.
+Electric cobalt `#4864ff`, navy `#11162b`, ice `#f5f7ff`.
 
-- `logo.svg` is the editable production mark. `logo.png`, the icon sizes, and `favicon.ico` are its raster companions.
-- `social-card.png` and `social-card.svg`: 1200 × 630 English website promotion / Open Graph image.
-- `promo-extension.png` and `.svg`: 1200 × 630 extension promotion.
-- `promo-website-tr.png` and `.svg`: 1200 × 630 Turkish website promotion.
-- `logo-generated.png`: original AI-generated exploration, retained for provenance. Use the clean production mark for UI and stores.
-- `build-brand.py` rebuilds the production exports with Python and Pillow. It uses Segoe UI from Windows for banner text. SVG files retain editable text with font fallbacks.
+The new Q mark combines a rounded scanner frame, four cobalt pixels and a pixel tail. It is an abstract logo, not a functional QR code.
 
-The mark is an abstract QR-inspired symbol, not a scannable QR code. It must not be presented as a functional QR.
+- Production: `logo.svg`, `logo.png` (1024px), `icon-{16,32,48,128,192,512}.png`, `favicon.ico`.
+- Banners: `social-card`, `promo-extension`, `promo-website-tr`, each in editable SVG and 1200×630 PNG.
+- `logo-generated.png`: current AI-generated logo exploration, separate from the refined production vector.
+- `build-brand.py`: repeatable vector-authored PNG exports with Python/Pillow and Windows Segoe UI. No network requests or remote fonts.
 
-The initial logo exploration used the built-in image generation tool with this prompt:
+Built-in image generation prompt: “Brand-new production app icon exploration for QR Scanner v1.1.2. Minimal distinctive Q monogram constructed as a thick rounded square scanner frame, with a small pixel tail at its lower right and a centered 2×2 pixel motif. Rounded-square navy #11162b tile, flat ice-white #f5f7ff frame and electric cobalt #4864ff pixels. Geometric, balanced, legible at 16px. Straight-on isolated 2D vector style, symbol only, no text, typography, gradients, glow, shadows, fake QR code, three QR finder corners or diagonal slash. Transparent outside tile.”
 
-> Use case: logo-brand. Production PNG app icon for QR Scanner, an independent privacy-first QR code reader and creator. Minimal flat geometric mark: deep teal rounded square tile (#087f73), cream-white three QR finder corners, distinctive diagonal scan slash at lower right. Bold proportions legible at 16px, balanced optical spacing, vector-like edges, no typography. Genuine transparent background outside tile. Avoid gradients, shadows, photography, tiny QR noise, decorative embellishments, text, mockups, multiple alternatives. Abstract brand mark, not a functional QR code.
-
-The production vector was manually refined and rasterized for crisp, consistent rendering at small sizes. Banner compositions were authored as native vector graphics with matching PNG exports.
+Production assets use a manually refined vector and matching raster exports for consistent small-size rendering. The obsolete teal identity has been replaced.

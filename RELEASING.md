@@ -1,7 +1,7 @@
 # Release procedure
 
-1. Increment `V` in `tools/build.py` and version in `package.json` together.
-   Update release date in build output, changelog and translated download labels/links.
+1. Increment `version` in `package.json` (the single version source).
+   Update release date, changelog and any version-specific translation copy.
    Never decrease a published extension manifest version.
 2. Edit shared runtime/translations; never manually patch generated extension copies.
 3. `npm ci`, `npm test`, `npm run build`, `npm run check`.
@@ -19,14 +19,16 @@
 Older installs without this feature need one manual/store update first.
 During a staged deployment publish the ZIP packages together with the metadata;
 do not advertise a version without its corresponding download. `_headers`
-prevents stale release metadata in browsers/CDNs supporting Pages headers.
+prevents stale release metadata in Cloudflare Workers Static Assets.
 
 ## Local folders
 
 - `C:/Users/halit/Desktop/WEB/QR`: working site and shared extension source.
 - `C:/Users/halit/OneDrive/Belgeler/GitHub/QR`: existing deployment Git checkout.
 - `C:/Users/halit/Desktop/WEB/QR-Scanner-v1`: requested unpacked release location.
-- `C:/Users/halit/Desktop/WEB/QR-Scanner`: original 1.1.0 source; preserve as baseline.
 
-Root `QR-Scanner-v1.zip` is the original 1.1.0 artifact and is not the latest.
-The site points to versioned `downloads/qr-scanner-1.1.1-*.zip` assets.
+Only the current version's packages belong in `downloads/`.
+Legacy archives, old root icons and obsolete standalone extension scripts were
+removed in 1.1.2. Git history retains release history. When updating the loaded
+extension folder, remove stale files that are absent from generated `extension/`
+and reload it on the browser's extensions page.
