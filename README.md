@@ -33,7 +33,7 @@ mağaza sürümünü geriye düşürmemek için 1.1.1 kullanılmıştır.
 | --- | --- |
 | Edge | [Existing store listing](https://microsoftedge.microsoft.com/addons/detail/qr-scanner/klblmhlgnbnclpdhddadkbbccmdjknmf); submitting 1.1.1 requires the owner's store account. |
 | Chrome / Edge / Brave / Opera | Load the Chromium ZIP unpacked in Developer mode. Store listings are not implied. |
-| Firefox 140+ | Separate MV3 package with Gecko ID and no-data declaration. Temporary installation via about:debugging; Mozilla signing is required for permanent installation. |
+| Firefox 142+ | Separate MV3 package with Gecko ID and no-data declaration. Temporary installation via about:debugging; Mozilla signing is required for permanent installation. |
 | Safari | Website works in modern Safari. Native extension conversion/signing with Xcode and Apple distribution is still required. No Safari package is claimed. |
 
 The extension requests `activeTab` for explicitly initiated screenshots and

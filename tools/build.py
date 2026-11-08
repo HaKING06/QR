@@ -66,7 +66,7 @@ def build_extension():
  downloads=R/'downloads';downloads.mkdir(exist_ok=True);hashes={}
  for browser in ['chromium','firefox']:
   m=dict(manifest)
-  if browser=='firefox':m['browser_specific_settings']={'gecko':{'id':'qr-scanner@haking.tr','strict_min_version':'140.0','data_collection_permissions':{'required':['none']}}}
+  if browser=='firefox':m['browser_specific_settings']={'gecko':{'id':'qr-scanner@haking.tr','strict_min_version':'142.0','data_collection_permissions':{'required':['none']}}}
   name=f'qr-scanner-{V}-{browser}.zip'
   with zipfile.ZipFile(downloads/name,'w',zipfile.ZIP_DEFLATED) as z:
    for p in E.rglob('*'):
