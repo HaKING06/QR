@@ -1,5 +1,12 @@
 # Release procedure
 
+Store-metadata-only corrections do not change the extension package version.
+Edit the eight descriptions in `tools/store-descriptions.json`, run
+`npm run build:store-copy` and `npm run check`, then update every localized
+Store listing in the dashboard and resubmit the rejected draft. Do not upload
+a new ZIP solely to change listing text. The build deliberately does not append
+comma-separated QR-type labels: that format caused a Yellow Argon rejection.
+
 1. Increment `version` in `package.json` (the single version source).
    Update release date, changelog and any version-specific translation copy.
    Never decrease a published extension manifest version.

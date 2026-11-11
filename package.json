@@ -11,7 +11,8 @@
     "build:edge-assets": "python tools/edge_assets.py",
     "build:chrome-assets": "python tools/chrome_assets.py",
     "build:chrome-package": "python tools/chrome_package.py",
-    "build:website": "python tools/build.py --site-only"
+    "build:website": "python tools/build.py --site-only",
+    "build:store-copy": "python tools/chrome_package.py --metadata-only"
   },
   "keywords": [],
   "author": "Halit (HaKING)",

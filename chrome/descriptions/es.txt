@@ -1,16 +1,5 @@
-QR Scanner permite leer y crear códigos QR sin salir del navegador. Elige una imagen, arrástrala o pega una captura para descifrar su contenido en tu dispositivo. Crea códigos con tu propio contenido, elige el color y el tamaño de salida y descárgalos en PNG o SVG.
+QR Scanner lee códigos en imágenes y, cuando lo solicitas, en la parte visible de la pestaña actual. Sube una imagen, arrástrala a la extensión o pégala desde el portapapeles. Si contiene varios códigos, puedes elegir un resultado y copiar el texto obtenido.
 
-Sitio web, Texto, Wi-Fi, Correo electrónico, Teléfono, SMS, Tarjeta de contacto.
+Crea un código para compartir un enlace o un texto propio. También puedes preparar uno para compartir los datos de acceso a una red Wi-Fi o una tarjeta de contacto. Elige el color y el tamaño de salida y descarga el resultado en PNG o SVG. Otro botón permite crear un código con la dirección de la pestaña actual.
 
-• QR de esta pestaña
-• Escanear pestaña actual
-• Encuentra varios códigos QR en una imagen y elige el resultado que necesitas.
-• Ocho idiomas, incluidos ruso y árabe con diseño de derecha a izquierda.
-• Notas claras tras una actualización real de la extensión y notificaciones de escritorio opcionales.
-• PNG para compartir. SVG para impresiones nítidas a cualquier tamaño.
-• Códigos QR estáticos. Sin caducidad ni servicio de redirección.
-• Totalmente gratis
-
-El contenido de los QR nunca se envía a nuestros servidores. Sin analítica, cookies de seguimiento ni historial de QR. Las preferencias de tema e idioma permanecen en tu dispositivo. Los proveedores de alojamiento pueden procesar registros habituales de conexión.
-
-Revisa el destino antes de abrirlo. HTTPS no garantiza que un sitio sea fiable.
+Las imágenes y el contenido de los códigos se procesan en tu dispositivo, no se envían a nuestros servidores ni se guardan en un historial QR. Las preferencias de idioma y tema se almacenan localmente. La extensión consulta qr.haking.tr para obtener información de versiones sin enviar el contenido de los códigos ni la dirección de la pestaña. Las notificaciones de escritorio sobre actualizaciones solo se usan si las activas.

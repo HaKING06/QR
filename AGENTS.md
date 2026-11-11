@@ -16,6 +16,10 @@
   `npm run build:chrome-assets` kullan; arayüz değiştiyse gerçek ekranları yenile.
 - Chrome mağaza adresini uydurma. Kullanıcının gerçek, herkese açık bağlantısını
   `store-links.json` içindeki `chrome` alanına ekleyince site düğmesi mağazaya gider.
+- Mağaza açıklamalarını `tools/store-descriptions.json` kaynağından üret.
+  Arayüzdeki tür adlarını virgülle sıralayıp açıklamaya ekleme; özellikleri
+  bağlam içinde doğal cümlelerle anlat. `npm run build:store-copy` yalnızca
+  mağaza metinlerini günceller; ZIP, arayüz ve sürüm numarasını değiştirmez.
 - Her projede açık bir sürüm bulunmalı. Her tamamlanan değişiklik tesliminde
   uygun sürümü artır; aynı teslimin ara düzenlemelerinde gereksiz sürüm artışı yapma.
   Site, manifest, paketler ve sürüm notları aynı sürümü taşımalı.

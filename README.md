@@ -84,10 +84,14 @@ refreshes the Edge ZIP in that folder; `npm run build:edge-assets` regenerates
 the 300×300 store logo, icon variants and 440×280 / 1400×560 promotional assets.
 
 For Chrome submission use [chrome/README.md](chrome/README.md). The folder
-contains the Chrome ZIP, eight localized descriptions/listings/privacy justifications,
+contains the Chrome ZIP, eight localized descriptions/privacy justifications,
 128px store icon, 440×280 / 1400×560 artwork and real-UI screenshot compositions.
 `npm run build:chrome-assets` refreshes artwork from native brand assets and
 locally captured UI. `npm run build` refreshes both store packages.
+Store descriptions have one editorial source: `tools/store-descriptions.json`.
+`npm run build:store-copy` refreshes both stores' text without modifying ZIPs
+or the extension version; `npm run check` detects stale copy and the standalone
+keyword-list format previously rejected by Chrome.
 `store-links.json` contains the published Chrome and Edge URLs. Brave/Opera/Firefox
 ZIP buttons continue to open their matching installation guide.
 

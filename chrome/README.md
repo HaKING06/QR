@@ -7,6 +7,10 @@ Diğer klasörleri ZIP'e ekleme veya klasör olarak yükleme.
 
 ## Mağaza alanları
 
+Yellow Argon ret yanıtından sonraki adımlar için [YENIDEN-GONDERIM.md](YENIDEN-GONDERIM.md)
+dosyasını kullan. Yalnızca açıklama değiştiyse yeni ZIP yükleme; mevcut taslaktaki
+sekiz dilin Açıklama alanını `descriptions/<dil>.txt` ile değiştir.
+
 | Alan | Kullanılacak dosya |
 | --- | --- |
 | Paket | Ana klasördeki güncel `qr-scanner-<sürüm>-chrome.zip` |
@@ -18,10 +22,9 @@ Diğer klasörleri ZIP'e ekleme veya klasör olarak yükleme.
 | Gizlilik / izin gerekçeleri | `privacy-forms/tr.txt` |
 
 8 dil hazır: `tr`, `en`, `de`, `es`, `fr`, `pt`, `ru`, `ar`. Mağazada üstteki dil seçimini
-değiştirerek aynı dilin `store-listings` açıklamasını ve `screenshots` ekranlarını ekle.
+değiştirerek aynı dilin `descriptions` açıklamasını ve `screenshots` ekranlarını ekle.
 `privacy-forms` metinleri Gizlilik bölümündeki ilgili alanlar içindir; mağaza
-açıklamasına yapıştırma. `store-listings` dosyasından yalnızca Detailed description
-başlığı altındaki tanıtım metnini Açıklama alanına kopyala.
+açıklamasına yapıştırma. `descriptions/<dil>.txt` dosyasındaki metni doğrudan Açıklama alanına kopyala.
 Chrome'da küçük/büyük tanıtım afişleri dil bazında değil, ortaktır. `promotional`
 klasöründeki diğer yedi dilin sürümleri alternatiflerdir; tüm diller için İngilizce afişleri
 kullanabilirsin. Ana klasördeki afişler Türkçedir. Logo da tüm diller için aynıdır.
@@ -64,3 +67,6 @@ uzantıdaki zil düğmesinden izin verirse görünür.
 Chrome Gelişmiş Güvenli Tarama yeni geliştiricilere güven geçmişi oluşana kadar
 uyarı gösterebilir; bu uyarının hemen kalkacağı garanti edilemez.
 Kaynak: https://support.google.com/chrome/answer/2664769
+
+İlave logo boyutları ve SVG kaynağı `../edge/icons/` içindedir; burada yalnızca
+Chrome mağazasına gereken `store-icon-128x128.png` tutulur.

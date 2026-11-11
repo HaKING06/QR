@@ -1,16 +1,5 @@
-QR Scanner permet de lire et de créer des codes QR sans quitter le navigateur. Choisissez une image, déposez-la ou collez une capture pour lire son contenu sur votre appareil. Créez un code avec votre propre contenu, choisissez sa couleur et sa taille, puis téléchargez-le en PNG ou SVG.
+QR Scanner lit les codes présents dans des images et, à votre demande, dans la partie visible de l’onglet actuel. Importez une image, déposez-la dans l’extension ou collez-la depuis le presse-papiers. Si elle contient plusieurs codes, vous pouvez choisir un résultat et copier le texte décodé.
 
-Site web, Texte, Wi-Fi, E-mail, Téléphone, SMS, Fiche de contact.
+Créez un code pour partager un lien ou votre propre texte. Vous pouvez aussi en préparer un pour partager les informations d’accès à un réseau Wi-Fi ou une fiche de contact. Choisissez la couleur et la taille de sortie, puis téléchargez le résultat en PNG ou SVG. Un autre bouton crée un code à partir de l’adresse de l’onglet actuel.
 
-• QR de cet onglet
-• Scanner l’onglet actuel
-• Repérez plusieurs codes QR dans une image et choisissez le résultat souhaité.
-• Huit langues, dont le russe et l’arabe avec une mise en page de droite à gauche.
-• Des notes claires après une véritable mise à jour de l’extension et des notifications de bureau facultatives.
-• Le PNG pour partager. Le SVG pour des impressions nettes à toute taille.
-• Des codes QR statiques. Sans expiration ni service de redirection.
-• Entièrement gratuit
-
-Le contenu des QR n’est jamais envoyé à nos serveurs. Aucune analyse d’audience, aucun cookie de suivi ni historique QR. Vos préférences de thème et de langue restent sur votre appareil. Les hébergeurs peuvent traiter les journaux de connexion habituels.
-
-Vérifiez la destination avant de l’ouvrir. HTTPS ne garantit pas la fiabilité d’un site.
+Les images et le contenu des codes sont traités sur votre appareil, sans envoi à nos serveurs ni conservation dans un historique QR. Les préférences de langue et de thème sont enregistrées localement. L’extension consulte qr.haking.tr pour obtenir les informations de version, sans transmettre le contenu des codes ni l’adresse de l’onglet. Les notifications de mise à jour sur le bureau ne sont utilisées que si vous les activez.

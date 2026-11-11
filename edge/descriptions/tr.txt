@@ -1,19 +1,5 @@
-Tarayıcıdan ayrılmadan görselleri oku, açık sekmeyi tara ve QR kodlar oluştur.
+QR Scanner, görsellerdeki ve isteğiniz üzerine açık sekmenin görünen bölümündeki QR kodlarını okumanıza yardımcı olur. Bir görsel yükleyebilir, sürükleyip bırakabilir veya panodan yapıştırabilirsiniz. Aynı görselde birden fazla kod bulunduğunda sonuçlar arasında seçim yapabilir ve çözümlenen metni kopyalayabilirsiniz.
 
-Web sitesi, Metin, Wi-Fi, E-posta, Telefon, SMS, Kişi kartı.
+Bir bağlantıyı veya kendi yazdığınız metni paylaşmak için kod oluşturabilirsiniz. Wi-Fi erişim bilgilerinizi ya da bir kişi kartını paylaşmak için de kod hazırlayabilirsiniz. Rengi ve çıktı boyutunu seçtikten sonra sonucu PNG veya SVG olarak indirin. Açık sekmenin adresinden kod oluşturma düğmesi de bulunur.
 
-Bu sekmenin QR kodu. Açık sekmeyi tara.
-
-Tek bir görselde birden fazla QR kod bul, istediğin sonucu seç.
-
-Sağdan sola arayüzüyle Arapça ve Rusça dahil sekiz dil.
-
-Gerçek uzantı güncellemesinden sonra anlaşılır sürüm notları ve isteğe bağlı masaüstü bildirimleri.
-
-Paylaşmak için PNG. Keskin baskılar için SVG.
-
-Statik QR kodlar. Süre sınırı ve yönlendirme hizmeti yok.
-
-QR içerikleri sunucularımıza gönderilmez. Analiz, takip çerezi veya QR geçmişi yoktur. Tema ve dil tercihleri cihazında saklanır. Barındırma sağlayıcıları standart bağlantı kayıtlarını işleyebilir.
-
-Açmadan önce hedefi kontrol et. HTTPS, sitenin güvenilir olduğunu garanti etmez.
+Görseller ve kod içerikleri cihazınızda işlenir; sunucularımıza gönderilmez ve QR geçmişi tutulmaz. Dil ve tema tercihleri yerel olarak saklanır. Sürüm kontrolü için qr.haking.tr adresine bağlantı kurulur; bu istek kod içeriklerini veya sekme adresini içermez. Masaüstü güncelleme bildirimleri yalnızca siz etkinleştirirseniz kullanılır.

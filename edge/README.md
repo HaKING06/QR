@@ -19,7 +19,7 @@ Ana dizindeki iki tanıtım görseli Türkçedir. Mağazada aynı logoyu diğer 
 Duplicate seçeneğiyle kopyalayabilirsin. Görselleri ZIP'in içine koyma;
 Partner Center'daki ilgili görsel alanlarına ayrı yükle.
 
-`store-listings/` altındaki sekiz dil dosyası, açıklamalar ve bağlantılar için
+`descriptions/` altındaki sekiz dil dosyası, mağaza açıklamaları için
 kopyalanabilir metinler içerir. Göndermeden önce gözden geçir.
 
 ## Sonraki güncellemeler

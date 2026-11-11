@@ -1,19 +1,5 @@
-Lies Bilder, scanne den aktuellen Tab und erstelle QR-Codes, ohne den Browser zu verlassen.
+QR Scanner liest Codes aus Bildern und auf deinen Wunsch aus dem sichtbaren Bereich des aktuellen Tabs. Lade ein Bild hoch, ziehe es in die Erweiterung oder füge es aus der Zwischenablage ein. Enthält ein Bild mehrere Codes, kannst du ein Ergebnis auswählen und den ausgelesenen Text kopieren.
 
-Webseite, Text, WLAN, E-Mail, Telefon, SMS, Kontaktkarte.
+Erstelle einen Code, um einen Link oder eigenen Text zu teilen. Auch WLAN-Zugangsdaten oder eine Kontaktkarte lassen sich so weitergeben. Wähle Farbe und Ausgabegröße und lade das Ergebnis als PNG oder SVG herunter. Eine eigene Schaltfläche erstellt einen Code aus der Adresse des aktuellen Tabs.
 
-QR für diesen Tab. Aktuellen Tab scannen.
-
-Finde mehrere QR-Codes in einem Bild und wähle das gewünschte Ergebnis.
-
-Acht Sprachen, darunter Russisch und Arabisch mit Schreibrichtung von rechts nach links.
-
-Übersichtliche Versionshinweise nach einem tatsächlichen Erweiterungsupdate und freiwillige Desktop-Benachrichtigungen.
-
-PNG zum Teilen. SVG für scharfe Ausdrucke in jeder Größe.
-
-Statische QR-Codes. Ohne Ablaufdatum und Weiterleitungsdienst.
-
-QR-Inhalte werden niemals an unsere Server gesendet. Keine Analyse, Tracking-Cookies oder QR-Verläufe. Design- und Spracheinstellungen bleiben auf deinem Gerät. Hosting-Anbieter können übliche Verbindungsprotokolle verarbeiten.
-
-Prüfe das Ziel vor dem Öffnen. HTTPS garantiert keine vertrauenswürdige Webseite.
+Bilder und Code-Inhalte werden auf deinem Gerät verarbeitet, nicht an unsere Server gesendet und nicht in einem QR-Verlauf gespeichert. Sprache und Design werden lokal gespeichert. Für Versionsinformationen kontaktiert die Erweiterung qr.haking.tr, ohne Code-Inhalte oder die Tab-Adresse zu übertragen. Desktop-Benachrichtigungen zu Updates werden nur verwendet, wenn du sie aktivierst.

@@ -1,19 +1,5 @@
-Leia imagens, capture a aba atual e crie códigos QR sem sair do navegador.
+O QR Scanner lê códigos em imagens e, quando você solicita, na parte visível da aba atual. Envie uma imagem, arraste-a para a extensão ou cole-a da área de transferência. Se ela contiver vários códigos, você pode escolher um resultado e copiar o texto decodificado.
 
-Site, Texto, Wi-Fi, E-mail, Telefone, SMS, Cartão de contato.
+Crie um código para compartilhar um link ou um texto próprio. Você também pode preparar um para compartilhar os dados de acesso a uma rede Wi-Fi ou um cartão de contato. Escolha a cor e o tamanho de saída e baixe o resultado em PNG ou SVG. Outro botão cria um código a partir do endereço da aba atual.
 
-QR desta aba. Ler aba atual.
-
-Encontre vários códigos QR em uma imagem e escolha o resultado desejado.
-
-Oito idiomas, incluindo russo e árabe com layout da direita para a esquerda.
-
-Notas claras após uma atualização real da extensão e notificações opcionais na área de trabalho.
-
-PNG para compartilhar. SVG para impressões nítidas em qualquer tamanho.
-
-Códigos QR estáticos. Sem expiração nem serviço de redirecionamento.
-
-O conteúdo dos códigos QR nunca é enviado aos nossos servidores. Sem análise de uso, cookies de rastreamento ou histórico de QR. As preferências de tema e idioma ficam no seu dispositivo. Os provedores de hospedagem podem processar registros normais de conexão.
-
-Confira o destino antes de abrir. HTTPS não garante que o site seja confiável.
+As imagens e o conteúdo dos códigos são processados no seu dispositivo, sem envio aos nossos servidores nem armazenamento em um histórico QR. As preferências de idioma e tema são salvas localmente. A extensão consulta qr.haking.tr para obter informações de versão sem enviar o conteúdo dos códigos ou o endereço da aba. As notificações de atualização na área de trabalho só são usadas se você as ativar.

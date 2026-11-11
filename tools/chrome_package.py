@@ -5,14 +5,6 @@ import json
 import zipfile
 
 ROOT=Path(__file__).resolve().parents[1]
-INTRO={
-'tr':'QR Scanner, QR kodlarını tarayıcınızdan ayrılmadan okumanız ve oluşturmanız için hazırlanmış bir araçtır. Bir görsel seçin, sürükleyin veya ekran görüntüsünü yapıştırın; kodun içeriğini cihazınızda görüntüleyin. Kendi içeriğinizden QR kodu oluşturun, rengini ve çıktı boyutunu seçin, PNG veya SVG olarak indirin.',
-'en':'QR Scanner lets you read and create QR codes without leaving your browser. Choose an image, drag it in or paste a screenshot to decode its contents on your device. Create a code from your own content, choose its color and output size, and download it as PNG or SVG.',
-'de':'Mit QR Scanner kannst du QR-Codes direkt im Browser lesen und erstellen. Wähle ein Bild, lege es ab oder füge einen Screenshot ein, um den Inhalt auf deinem Gerät auszulesen. Erstelle Codes aus eigenen Inhalten, wähle Farbe und Ausgabegröße und lade sie als PNG oder SVG herunter.',
-'es':'QR Scanner permite leer y crear códigos QR sin salir del navegador. Elige una imagen, arrástrala o pega una captura para descifrar su contenido en tu dispositivo. Crea códigos con tu propio contenido, elige el color y el tamaño de salida y descárgalos en PNG o SVG.',
-'fr':'QR Scanner permet de lire et de créer des codes QR sans quitter le navigateur. Choisissez une image, déposez-la ou collez une capture pour lire son contenu sur votre appareil. Créez un code avec votre propre contenu, choisissez sa couleur et sa taille, puis téléchargez-le en PNG ou SVG.',
-'pt':'O QR Scanner permite ler e criar códigos QR sem sair do navegador. Escolha uma imagem, arraste-a ou cole uma captura para decodificar o conteúdo no seu dispositivo. Crie códigos com seu próprio conteúdo, escolha a cor e o tamanho de saída e baixe em PNG ou SVG.'}
-
 PRIVACY={
 'tr':[
 'QR Scanner’ın tek amacı, tarayıcıda QR kodlarını cihaz üzerinde okumak ve oluşturmaktır. Görsel veya etkin sekmedeki QR okunabilir; bağlantı, metin, Wi-Fi, e-posta, telefon, SMS ve kişi kartı için QR oluşturulup indirilebilir.',
@@ -63,19 +55,20 @@ def prepare_chrome():
     digest=hashlib.sha256((out/name).read_bytes()).hexdigest()
     (out/'SHA256SUMS.txt').write_text(f'{digest}  {name}\n',encoding='utf-8')
     (out/'release.json').write_text(json.dumps({'version':version,'package':name,'sha256':digest,'source':source.relative_to(ROOT).as_posix(),'automatic_publication':False,'adaptation':'128px icon with 96px artwork and 16px transparent padding'},indent=2),encoding='utf-8')
+    prepare_chrome_copy()
+    print(f'Prepared chrome/{name}; not published.')
+
+def prepare_chrome_copy():
+    out=ROOT/'chrome';out.mkdir(exist_ok=True)
     locales=json.loads((ROOT/'shared/locales.json').read_text(encoding='utf-8'))
+    descriptions_by_language=json.loads((ROOT/'tools/store-descriptions.json').read_text(encoding='utf-8'))
+    assert set(descriptions_by_language)==set(locales),'Store copy must cover every supported language'
     extra=json.loads((ROOT/'tools/store_copy_extra.json').read_text(encoding='utf-8'))
     for lang,copy in extra.items():
-        INTRO[lang]=copy['intro']
         PRIVACY[lang]=[copy['purpose'],copy['activeTab'],copy['host'],copy['remote']]
-    for folder in ['store-listings','privacy-forms']:(out/folder).mkdir(exist_ok=True)
+    for folder in ['privacy-forms']:(out/folder).mkdir(exist_ok=True)
     for lang,s in locales.items():
-        types=', '.join(s[key] for key in ['url','text','wifi','email','phone','sms','vcard'])
-        features='\n'.join('• '+s[key] for key in ['currentTab','screenshot','featureMultiScan','featureLanguages','featureUpdates','exportDesc','noExpiryDesc','free'])
-        description='\n\n'.join([INTRO[lang],types+'.',features,s['privacyDesc'],s['linkNote']])
-        assert len(description)>250
-        content=f'QR Scanner — v{version}\n\nName: QR Scanner\n\nSummary / Short description:\n{s["extensionDesc"]}\n\nDetailed description:\n{description}\n\nWebsite: https://qr.haking.tr/\nPrivacy policy: https://qr.haking.tr/{lang}/privacy.html\nSupport: qr@haking.tr\n{s["supportDeveloper"]}: https://buymeacoffee.com/haking\n'
-        (out/'store-listings'/f'{lang}.txt').write_text(content,encoding='utf-8')
+        description=descriptions_by_language[lang]
         purpose,active,host,remote=PRIVACY[lang]
         assert all(len(value)<=1000 for value in PRIVACY[lang])
         storage={
@@ -92,6 +85,14 @@ def prepare_chrome():
         (out/'privacy-forms'/f'{lang}.txt').write_text(fields,encoding='utf-8')
         descriptions=out/'descriptions';descriptions.mkdir(exist_ok=True)
         (descriptions/f'{lang}.txt').write_text(description,encoding='utf-8')
-    print(f'Prepared chrome/{name} and {len(locales)} localized listing/privacy files; not published.')
+    print(f'Prepared {len(locales)} Chrome descriptions/privacy files; packages unchanged.')
 
-if __name__=='__main__':prepare_chrome()
+if __name__=='__main__':
+    import argparse
+    parser=argparse.ArgumentParser()
+    parser.add_argument('--metadata-only',action='store_true',help='Refresh both stores text without rebuilding ZIPs')
+    if parser.parse_args().metadata_only:
+        prepare_chrome_copy()
+        from edge_package import prepare_edge_copy
+        prepare_edge_copy()
+    else:prepare_chrome()

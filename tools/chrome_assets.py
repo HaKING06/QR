@@ -2,7 +2,6 @@
 from pathlib import Path
 import importlib.util
 import json
-import shutil
 from PIL import Image,ImageDraw
 from text_layout import text,width
 
@@ -79,11 +78,9 @@ def screenshot(lang,mode,out=OUT):
     return True
 
 def export_assets():
-    OUT.mkdir(exist_ok=True);(OUT/'icons').mkdir(exist_ok=True)
+    OUT.mkdir(exist_ok=True)
     store=Image.new('RGBA',(128,128));store.paste(brand.icon(96),(16,16))
     store.save(OUT/'store-icon-128x128.png',optimize=True)
-    for size in [16,32,48,128,256,512,1024]:brand.icon(size).save(OUT/'icons'/f'icon-{size}.png',optimize=True)
-    shutil.copy2(ROOT/'assets/brand/logo.svg',OUT/'icons/logo.svg')
     count=0
     for lang in LOCALES:
         for size in [(440,280),(1400,560)]:tile(lang,size)

@@ -3,6 +3,15 @@ import json,zipfile,hashlib,re,struct
 R=Path(__file__).resolve().parents[1]
 version=json.loads((R/'package.json').read_text(encoding='utf-8'))['version']
 locales=json.loads((R/'shared/locales.json').read_text(encoding='utf-8'))
+store_copy=json.loads((R/'tools/store-descriptions.json').read_text(encoding='utf-8'))
+assert set(store_copy)==set(locales),'Every store language needs edited description copy'
+for lang,description in store_copy.items():
+ paragraphs=description.split('\n\n')
+ assert 250<=len(description)<=4000,(lang,'Invalid description length')
+ bare_types=', '.join(locales[lang][key] for key in ['url','text','wifi','email','phone','sms','vcard'])+'.'
+ assert bare_types not in description,(lang,'Yellow Argon: standalone keyword enumeration')
+ assert all(p.replace('،',',').count(',')<4 or len(p)>200 for p in paragraphs),(lang,'Check keyword-list formatting')
+ assert all('{{' not in p and '}}' not in p for p in paragraphs),(lang,'Unrendered store copy')
 for lang,d in locales.items():
  assert set(d)==set(locales['en']),lang
  for page in ['index','about','help','privacy','updates']:
@@ -44,10 +53,11 @@ with zipfile.ZipFile(chrome/chrome_release['package']) as zipped, zipfile.ZipFil
 for name,size in [('store-icon-128x128.png',(128,128)),('small-promo-440x280.png',(440,280)),('marquee-1400x560.png',(1400,560))]:
  assert struct.unpack('>II',(chrome/name).read_bytes()[16:24])==size,name
 for lang in locales:
- assert (chrome/'store-listings'/f'{lang}.txt').is_file()
  assert (chrome/'privacy-forms'/f'{lang}.txt').is_file()
  assert (edge/'descriptions'/f'{lang}.txt').is_file()
  assert (chrome/'descriptions'/f'{lang}.txt').is_file()
+ for store in [chrome,edge]:
+  assert (store/'descriptions'/f'{lang}.txt').read_text(encoding='utf-8')==store_copy[lang],(store,lang,'Stale store description')
  for mode in ['01-reader','02-generator']:
   assert struct.unpack('>II',(chrome/'screenshots'/lang/f'{mode}-1280x800.png').read_bytes()[16:24])==(1280,800)
   assert struct.unpack('>II',(edge/'screenshots'/lang/f'{mode}-1280x800.png').read_bytes()[16:24])==(1280,800)

@@ -1,5 +1,11 @@
 # Changelog
 
+## Store metadata correction — no package version change
+
+- Resolve the Yellow Argon rejection pattern in all eight store languages: replace standalone QR-type keyword lists and repetitive feature fragments with contextual prose.
+- Use one edited description source for Chrome and Edge, and add a metadata-only refresh command plus stale-copy/keyword-list checks.
+- Document the localized dashboard replacement and resubmission steps. Extension code, permissions, ZIPs and package version are unchanged.
+
 ## 1.1.4 — 2026-11-11
 
 - Remove unused logo exploration, redundant store image copies and the completed one-time translation migration script.
