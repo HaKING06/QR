@@ -28,6 +28,13 @@ prevents stale release metadata in Cloudflare Workers Static Assets.
 - `C:/Users/halit/Desktop/WEB/QR-Scanner-v1`: requested unpacked release location.
 
 Only the current version's packages belong in `downloads/`.
+Localized HTML pages and the generated `extension/` are deployment outputs,
+not disposable duplicates. Each store folder remains independently uploadable,
+so shared screenshots/icons/privacy text can intentionally appear in both.
+Turkish promotional tiles live at each store folder root; other languages
+live in `promotional/<language>/`. Do not recreate duplicate Turkish subfolders.
+Keep current native captures in ignored `test-results/chrome-captures/` when
+removing old browser profiles and test output; asset builds use those captures.
 Legacy archives, old root icons and obsolete standalone extension scripts were
 removed in 1.1.2. Git history retains release history. When updating the loaded
 extension folder, remove stale files that are absent from generated `extension/`

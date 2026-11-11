@@ -3,7 +3,7 @@ from pathlib import Path
 import importlib.util
 import json
 import shutil
-from PIL import Image, ImageDraw, ImageFont
+from PIL import Image
 
 ROOT=Path(__file__).resolve().parents[1]
 OUT=ROOT/'edge'
@@ -15,7 +15,7 @@ OUT.mkdir(exist_ok=True)
 (OUT/'icons').mkdir(exist_ok=True)
 (OUT/'promotional').mkdir(exist_ok=True)
 
-for size in [16,19,24,32,38,48,64,128,256,300,512,1024]:
+for size in [16,19,24,32,38,48,64,128,256,512,1024]:
     brand.icon(size).save(OUT/'icons'/f'icon-{size}.png',optimize=True)
 brand.icon(300).save(OUT/'logo-300x300.png',optimize=True)
 for name,color in [('white','#ffffff'),('dark','#11162b')]:

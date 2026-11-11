@@ -68,7 +68,8 @@ def build_extension():
     assert extension.is_relative_to(ROOT) and extension!=ROOT,str(extension)
     if extension.exists():shutil.rmtree(extension)
     extension.mkdir()
-    for folder in ['shared','vendor']:shutil.copytree(ROOT/folder,extension/folder)
+    for folder in ['shared','vendor']:
+        shutil.copytree(ROOT/folder,extension/folder,ignore=shutil.ignore_patterns('experience.js','__pycache__','*.pyc'))
     brand=extension/'assets/brand';brand.mkdir(parents=True)
     for name in ['logo.svg']+[f'icon-{size}.png' for size in [16,32,48,128]]:shutil.copy2(ROOT/'assets/brand'/name,brand/name)
     shutil.copy2(ROOT/'popup.css',extension/'popup.css')

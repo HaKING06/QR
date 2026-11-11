@@ -1,1 +1,1 @@
-b397b8dda598cd8ec7e7ad1d89fa2e6b8e63a182b83fe0693f96de7e9dfd78da  qr-scanner-1.1.3-chrome.zip
+06b5243e576484f806f2db9348e33da459c5b5628fc3489516ef1f8762cf538d  qr-scanner-1.1.4-chrome.zip

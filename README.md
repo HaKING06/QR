@@ -13,7 +13,7 @@ e-posta, telefon, SMS ve kişi kartı QR kodları oluşturur. PNG/SVG dışa akt
 görsel yapıştırma, otomatik dil, açık/koyu/sistem temaları desteklenir.
 QR içeriği ve görseller cihazda işlenir. Hesap ve filigran yoktur.
 
-**Sürüm: 1.1.3.** Kaydırmaya bağlı hareketli anlatım, sekiz dil (Arapça RTL dahil),
+**Sürüm: 1.1.4.** Kaydırmaya bağlı hareketli anlatım, sekiz dil (Arapça RTL dahil),
 çoklu QR okuma ve güncelleme sonrası sürüm notları.
 İletişim: [qr@haking.tr](mailto:qr@haking.tr).
 
@@ -40,7 +40,7 @@ QR içeriği ve görseller cihazda işlenir. Hesap ve filigran yoktur.
 
 | Platform | Installation/status |
 | --- | --- |
-| Edge | [Existing store listing](https://microsoftedge.microsoft.com/addons/detail/qr-scanner/klblmhlgnbnclpdhddadkbbccmdjknmf); submitting 1.1.3 requires the owner's store account. |
+| Edge | [Existing store listing](https://microsoftedge.microsoft.com/addons/detail/qr-scanner/klblmhlgnbnclpdhddadkbbccmdjknmf); submitting 1.1.4 requires the owner's store account. |
 | Chrome | [Chrome Web Store](https://chromewebstore.google.com/detail/qr-scanner/pmhjjnijononbcfddpimpegdobibhijo); the owner submits updates. |
 | Brave / Opera | Load the Chromium ZIP unpacked in Developer mode. |
 | Firefox 142+ | Separate MV3 package with Gecko ID and no-data declaration. Temporary installation via about:debugging; Mozilla signing is required for permanent installation. |
@@ -111,7 +111,11 @@ See [CONTRIBUTING.md](CONTRIBUTING.md), [SECURITY.md](SECURITY.md),
 [CHANGELOG.md](CHANGELOG.md), [third-party notices](THIRD_PARTY_NOTICES.md).
 MIT © 2026 Halit (HaKING). [haking.tr](https://haking.tr/).
 
-## Verification for 1.1.3
+## Verification for 1.1.4
+
+This is a file-cleanup release with no interface or permission changes. The UI
+checks below and native store screenshots were retained from 1.1.3; package,
+asset-reference and automated runtime checks were rerun for 1.1.4.
 
 Website primary QR interactions, two-code image decoding, scroll phases and overflow
 at 390px and 768px; native Chromium extension rendering in all eight languages

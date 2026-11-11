@@ -3,7 +3,6 @@ from pathlib import Path
 import importlib.util
 import json
 import shutil
-import textwrap
 from PIL import Image,ImageDraw
 from text_layout import text,width
 
@@ -47,10 +46,10 @@ def tile(lang,size,out=OUT,large_name='marquee-1400x560.png'):
             text(d,(64,347+index*32),line,font=brand.font(22),fill='#acb6d4',rtl_width=830)
         mark=brand.icon(310);im.paste(mark,(1020,123),mark)
         d.line((64,464,1336,464),fill='#303957');text(d,(64,491),'qr.haking.tr',font=brand.font(20,True),fill='#f5f7ff')
-    folder=out/'promotional'/lang;folder.mkdir(parents=True,exist_ok=True)
+    folder=out if lang=='tr' else out/'promotional'/lang
+    folder.mkdir(parents=True,exist_ok=True)
     name='small-promo-440x280.png' if small else large_name
     im.save(folder/name,optimize=True)
-    if lang=='tr':shutil.copy2(folder/name,out/name)
 
 def screenshot(lang,mode,out=OUT):
     source=ROOT/'test-results/chrome-captures'/f'{lang}-{mode}.png'

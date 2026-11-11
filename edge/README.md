@@ -9,12 +9,12 @@ Bu klasör yerel hazırlık içindir. Otomatik mağaza gönderimi veya public ya
 | Small promotional tile | `small-promo-440x280.png` — 440×280, isteğe bağlı |
 | Large promotional tile | `large-promo-1400x560.png` — 1400×560, isteğe bağlı |
 
-`icons/` içinde 16, 19, 24, 32, 38, 48, 64, 128, 256, 300, 512 ve 1024px
+`icons/` içinde 16, 19, 24, 32, 38, 48, 64, 128, 256, 512 ve 1024px
 PNG'ler, SVG kaynak logosu, ayrıca beyaz ve koyu zeminli 300×300 alternatifler var.
 Mağaza logosu olarak ana dizindeki dosyayı kullan; diğer boyutlar uyumluluk ve
 farklı kullanım alanları içindir. Uzantının kendi ikonları ZIP'e zaten dahil.
 
-`promotional/<dil>/` klasörlerinde sekiz dilin tanıtım görselleri bulunur.
+Türkçe tanıtım görselleri ana dizindedir; diğer yedi dil `promotional/<dil>/` içindedir.
 Ana dizindeki iki tanıtım görseli Türkçedir. Mağazada aynı logoyu diğer dillere
 Duplicate seçeneğiyle kopyalayabilirsin. Görselleri ZIP'in içine koyma;
 Partner Center'daki ilgili görsel alanlarına ayrı yükle.

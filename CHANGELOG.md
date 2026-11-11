@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.1.4 — 2026-11-11
+
+- Remove unused logo exploration, redundant store image copies and the completed one-time translation migration script.
+- Remove obsolete local browser-test profiles, captures, Python caches and disposable static output; retain current source captures for rebuilding store screenshots.
+- Keep Turkish promotional images only at each store folder root; keep localized alternatives and independent store submission assets.
+- Exclude website-only motion code from extension packages and source/cache files from static hosting output.
+- No interface or permission changes. Store screenshots retain the actual 1.1.3 capture provenance because the interface is unchanged.
+
 ## 1.1.3 — 2026-11-11
 
 - Connect the published Chrome Web Store listing and add developer support links.

@@ -23,7 +23,7 @@ değiştirerek aynı dilin `store-listings` açıklamasını ve `screenshots` ek
 açıklamasına yapıştırma. `store-listings` dosyasından yalnızca Detailed description
 başlığı altındaki tanıtım metnini Açıklama alanına kopyala.
 Chrome'da küçük/büyük tanıtım afişleri dil bazında değil, ortaktır. `promotional`
-klasöründeki dil sürümleri alternatiflerdir; tüm diller için İngilizce afişleri
+klasöründeki diğer yedi dilin sürümleri alternatiflerdir; tüm diller için İngilizce afişleri
 kullanabilirsin. Ana klasördeki afişler Türkçedir. Logo da tüm diller için aynıdır.
 Gizlilik/veri kullanımı beyanlarını göndermeden önce kontrol et; burada hesap üzerinden
 otomatik seçim veya gönderim yapılmaz.

@@ -1,6 +1,6 @@
 # Security policy
 
-Security fixes target the latest release (1.1.3). Please report vulnerabilities
+Security fixes target the latest release (1.1.4). Please report vulnerabilities
 privately through GitHub's private vulnerability reporting when enabled, or use
 qr@haking.tr. Do not include secrets or personal
 QR contents in public issues. Do not assume an HTTPS QR destination is safe.
