@@ -1,4 +1,4 @@
-QR Scanner — v1.1.2
+QR Scanner — v1.1.3
 
 Name: QR Scanner
 
@@ -12,6 +12,12 @@ Web sitesi, Metin, Wi-Fi, E-posta, Telefon, SMS, Kişi kartı.
 
 Bu sekmenin QR kodu. Açık sekmeyi tara.
 
+Tek bir görselde birden fazla QR kod bul, istediğin sonucu seç.
+
+Sağdan sola arayüzüyle Arapça ve Rusça dahil sekiz dil.
+
+Gerçek uzantı güncellemesinden sonra anlaşılır sürüm notları ve isteğe bağlı masaüstü bildirimleri.
+
 Paylaşmak için PNG. Keskin baskılar için SVG.
 
 Statik QR kodlar. Süre sınırı ve yönlendirme hizmeti yok.
@@ -23,3 +29,4 @@ Açmadan önce hedefi kontrol et. HTTPS, sitenin güvenilir olduğunu garanti et
 Website: https://qr.haking.tr/
 Privacy policy: https://qr.haking.tr/tr/privacy.html
 Support: qr@haking.tr
+Geliştiriciye destek ol: https://buymeacoffee.com/haking

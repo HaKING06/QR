@@ -1,1 +1,1 @@
-a334d1f7528095de65a49c9036ffe1fe2cf94e105b7c2ea3f3579a38a1f2df62  qr-scanner-1.1.2-edge.zip
+8bf2c3e781334c053a3d8126fb2425c0d3d45dad0550b2237bdfbe6e7421915e  qr-scanner-1.1.3-edge.zip

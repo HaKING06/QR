@@ -28,10 +28,15 @@ def prepare_edge():
     listings=destination/'store-listings';listings.mkdir(exist_ok=True)
     for language,strings in locales.items():
         types=', '.join(strings[key] for key in ['url','text','wifi','email','phone','sms','vcard'])
-        description='\n\n'.join([strings['extensionDesc'],types+'.',strings['currentTab']+'. '+strings['screenshot']+'.',strings['exportDesc'],strings['noExpiryDesc'],strings['privacyDesc'],strings['linkNote']])
+        description='\n\n'.join([strings['extensionDesc'],types+'.',strings['currentTab']+'. '+strings['screenshot']+'.',strings['featureMultiScan'],strings['featureLanguages'],strings['featureUpdates'],strings['exportDesc'],strings['noExpiryDesc'],strings['privacyDesc'],strings['linkNote']])
         assert 250<=len(description)<=10000
-        content=f'QR Scanner — v{version}\n\nName: QR Scanner\n\nShort description:\n{strings["extensionDesc"]}\n\nDescription:\n{description}\n\nWebsite: https://qr.haking.tr/\nPrivacy policy: https://qr.haking.tr/{language}/privacy.html\nSupport: qr@haking.tr\n'
+        content=f'QR Scanner — v{version}\n\nName: QR Scanner\n\nShort description:\n{strings["extensionDesc"]}\n\nDescription:\n{description}\n\nWebsite: https://qr.haking.tr/\nPrivacy policy: https://qr.haking.tr/{language}/privacy.html\nSupport: qr@haking.tr\n{strings["supportDeveloper"]}: https://buymeacoffee.com/haking\n'
         (listings/f'{language}.txt').write_text(content,encoding='utf-8')
+        descriptions=destination/'descriptions';descriptions.mkdir(exist_ok=True)
+        (descriptions/f'{language}.txt').write_text(description,encoding='utf-8')
+        fields=destination/'privacy-forms';fields.mkdir(exist_ok=True)
+        chrome_copy=ROOT/'chrome/privacy-forms'/f'{language}.txt'
+        if chrome_copy.exists():shutil.copy2(chrome_copy,fields/f'{language}.txt')
     (destination/'release.json').write_text(json.dumps({'version':version,'package':name,'sha256':digest,'source':source.relative_to(ROOT).as_posix(),'automatic_publication':False},indent=2),encoding='utf-8')
     print(f'Prepared local Edge package: edge/{name} (not published)')
 

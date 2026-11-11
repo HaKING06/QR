@@ -1,7 +1,7 @@
 (() => {
   'use strict';
   const localeURL=new URL('locales.json',document.currentScript.src);
-  const languages=['tr','en','de','es','fr','pt'];
+  const languages=['tr','en','de','es','fr','pt','ru','ar'];
   const popup=document.documentElement.dataset.extension==='true';
   const read=(key,fallback)=>{try{return localStorage.getItem(key)||fallback;}catch{return fallback;}};
   const save=(key,value)=>{try{localStorage.setItem(key,value);}catch{}};
@@ -18,9 +18,12 @@
 
   function translate(){
     document.documentElement.lang=language;
+    document.documentElement.dir=language==='ar'?'rtl':'ltr';
     if(dictionaries)document.querySelectorAll('[data-i18n]').forEach(node=>{node.textContent=text(node.dataset.i18n);});
     document.querySelectorAll('[data-language]').forEach(button=>button.setAttribute('aria-checked',String(button.dataset.language===(popup?choice:language))));
-    document.getElementById('language-label').textContent=language.toUpperCase();
+    const label=document.getElementById('language-label');
+    if(label)label.textContent=language.toUpperCase();
+    mirrorPreferences();
     document.dispatchEvent(new CustomEvent('qr:locale',{detail:{language}}));
   }
   function applyTheme(){
@@ -28,6 +31,11 @@
     document.querySelectorAll('[data-theme-choice]').forEach(button=>button.setAttribute('aria-checked',String(button.dataset.themeChoice===theme)));
     const glyph=document.querySelector(`[data-theme-choice="${theme}"]>.icon`);
     if(glyph)document.getElementById('theme-icon')?.replaceChildren(glyph.cloneNode(true));
+    mirrorPreferences();
+  }
+  function mirrorPreferences(){
+    const api=globalThis.browser||globalThis.chrome;
+    if(popup&&api?.runtime?.id&&api.storage?.local)api.storage.local.set({preferences:{language:choice,theme}}).catch(()=>{});
   }
   function closeMenus(){document.querySelectorAll('.pref-menu').forEach(menu=>{menu.open=false;});}
   document.querySelectorAll('[data-language]').forEach(button=>button.addEventListener('click',()=>{

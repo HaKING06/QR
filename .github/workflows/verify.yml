@@ -19,6 +19,6 @@ jobs:
           python-version: '3.13'
       - run: npm ci
       - run: npm test
-      - run: node --check shared/app.js && node --check shared/i18n.js
+      - run: node --check shared/app.js && node --check shared/i18n.js && node --check shared/experience.js && node --check background.js
       - run: npm run build
       - run: npm run check

@@ -1,0 +1,17 @@
+{
+  "extensionName": {
+    "message": "QR Scanner — Считать QR & Создать QR"
+  },
+  "extensionDescription": {
+    "message": "Считывайте изображения, сканируйте текущую вкладку и создавайте QR-коды, не выходя из браузера."
+  },
+  "notificationInstalled": {
+    "message": "QR Scanner обновлён · {version}"
+  },
+  "notificationAvailable": {
+    "message": "Доступен QR Scanner {version}"
+  },
+  "notificationBody": {
+    "message": "Готова новая версия. Откройте страницу выпуска, чтобы узнать, как обновить расширение."
+  }
+}

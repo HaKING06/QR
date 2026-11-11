@@ -1,0 +1,21 @@
+Single purpose description:
+QR Scanner tiene un único propósito: leer y crear códigos QR localmente en el navegador. Lee imágenes o la pestaña activa y crea códigos para enlaces, texto, Wi-Fi, correo, teléfono, SMS y contactos.
+
+activeTab justification:
+activeTab se utiliza únicamente cuando el usuario abre la extensión y elige la acción correspondiente, para leer localmente el área visible de la pestaña activa o crear un QR de su dirección. No se vigilan pestañas ni el historial en segundo plano. Las capturas y direcciones no se envían a un servidor.
+
+Host permission justification:
+https://qr.haking.tr/* se usa solo para consultar https://qr.haking.tr/version.json y mostrar un enlace de actualización si existe una versión más reciente. La solicitud no incluye contenido QR, imágenes, capturas ni la dirección de la pestaña activa. No se descarga ni ejecuta código desde ese sitio.
+
+storage justification:
+storage guarda localmente el idioma, tema, metadatos de versión en caché y la última versión mostrada o notificada. Evita páginas y avisos repetidos. No guarda contenidos QR, imágenes ni historial.
+
+notifications (optional) justification:
+Las notificaciones de escritorio opcionales te avisan cuando hay una versión nueva. Permítelas solo si deseas recibir estos avisos.
+
+Remote code: NO
+Explanation:
+No. Todo el JavaScript y las bibliotecas QR están incluidos en el ZIP. No se carga JavaScript ni WebAssembly externo. El JSON de versión remoto se lee solo como datos y nunca se ejecuta como código.
+
+Privacy policy: https://qr.haking.tr/es/privacy.html
+Support: qr@haking.tr

@@ -4,5 +4,14 @@
   },
   "extensionDescription": {
     "message": "Leia imagens, capture a aba atual e crie códigos QR sem sair do navegador."
+  },
+  "notificationInstalled": {
+    "message": "QR Scanner foi atualizado · {version}"
+  },
+  "notificationAvailable": {
+    "message": "QR Scanner {version} está disponível"
+  },
+  "notificationBody": {
+    "message": "Uma nova versão está pronta. Abra a página da versão para saber como atualizar."
   }
 }

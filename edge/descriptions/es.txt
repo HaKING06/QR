@@ -1,0 +1,19 @@
+Lee imágenes, escanea la pestaña actual y crea códigos QR sin salir del navegador.
+
+Sitio web, Texto, Wi-Fi, Correo electrónico, Teléfono, SMS, Tarjeta de contacto.
+
+QR de esta pestaña. Escanear pestaña actual.
+
+Encuentra varios códigos QR en una imagen y elige el resultado que necesitas.
+
+Ocho idiomas, incluidos ruso y árabe con diseño de derecha a izquierda.
+
+Notas claras tras una actualización real de la extensión y notificaciones de escritorio opcionales.
+
+PNG para compartir. SVG para impresiones nítidas a cualquier tamaño.
+
+Códigos QR estáticos. Sin caducidad ni servicio de redirección.
+
+El contenido de los QR nunca se envía a nuestros servidores. Sin analítica, cookies de seguimiento ni historial de QR. Las preferencias de tema e idioma permanecen en tu dispositivo. Los proveedores de alojamiento pueden procesar registros habituales de conexión.
+
+Revisa el destino antes de abrirlo. HTTPS no garantiza que un sitio sea fiable.

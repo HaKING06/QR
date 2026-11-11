@@ -14,12 +14,12 @@ PNG'ler, SVG kaynak logosu, ayrıca beyaz ve koyu zeminli 300×300 alternatifler
 Mağaza logosu olarak ana dizindeki dosyayı kullan; diğer boyutlar uyumluluk ve
 farklı kullanım alanları içindir. Uzantının kendi ikonları ZIP'e zaten dahil.
 
-`promotional/` klasöründe Türkçe ve İngilizce tanıtım görselleri bulunur.
+`promotional/<dil>/` klasörlerinde sekiz dilin tanıtım görselleri bulunur.
 Ana dizindeki iki tanıtım görseli Türkçedir. Mağazada aynı logoyu diğer dillere
 Duplicate seçeneğiyle kopyalayabilirsin. Görselleri ZIP'in içine koyma;
 Partner Center'daki ilgili görsel alanlarına ayrı yükle.
 
-`store-listings/` altındaki altı dil dosyası, açıklamalar ve bağlantılar için
+`store-listings/` altındaki sekiz dil dosyası, açıklamalar ve bağlantılar için
 kopyalanabilir metinler içerir. Göndermeden önce gözden geçir.
 
 ## Sonraki güncellemeler
@@ -40,3 +40,16 @@ Kaynak: https://learn.microsoft.com/en-us/microsoft-edge/extensions/publish/publ
 Microsoft'un belirttiği logo: 1:1, önerilen 300×300, en az 128×128.
 Tanıtım görselleri: 440×280 ve 1400×560. İsteğe bağlı gerçek ekran görüntüleri
 640×480 veya 1280×800 olmalı; tanıtım afişleri ekran görüntüsü alanına yüklenmemeli.
+
+## 1.1.3 teslim notu
+
+Önce web sitesini yayınla; `/updates.html` açıldıktan sonra mağaza paketini yükle.
+Yeni öğe oluşturma; mevcut öğenin paketini güncelle. Sekiz dilin düz açıklamaları
+`descriptions/`, izin gerekçeleri `privacy-forms/`, gerçek uzantı ekranları
+`screenshots/<dil>/` içinde. Yeni `storage` ve isteğe bağlı `notifications`
+izinlerini hazırlanan metinlere göre beyan et. Sistem bildirimi kullanıcı
+uzantıdaki zil düğmesinden izin verirse görünür.
+
+Chrome Gelişmiş Güvenli Tarama yeni geliştiricilere güven geçmişi oluşana kadar
+uyarı gösterebilir; bu uyarının hemen kalkacağı garanti edilemez.
+Kaynak: https://support.google.com/chrome/answer/2664769

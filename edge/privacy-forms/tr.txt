@@ -1,0 +1,21 @@
+Single purpose description:
+QR Scanner’ın tek amacı, tarayıcıda QR kodlarını cihaz üzerinde okumak ve oluşturmaktır. Görsel veya etkin sekmedeki QR okunabilir; bağlantı, metin, Wi-Fi, e-posta, telefon, SMS ve kişi kartı için QR oluşturulup indirilebilir.
+
+activeTab justification:
+activeTab, kullanıcı uzantıyı açıp ilgili düğmeye bastığında etkin sekmenin görünen alanındaki QR kodunu yerel olarak okumak ve etkin sekmenin adresinden QR oluşturmak için kullanılır. Arka planda sekmeler ya da gezinme geçmişi izlenmez. Ekran görüntüleri ve sekme adresleri sunucuya gönderilmez.
+
+Host permission justification:
+https://qr.haking.tr/* yalnızca https://qr.haking.tr/version.json üzerinden yeni sürüm bilgisini almak ve daha yeni sürüm varsa bağlantısını göstermek için kullanılır. İstek QR içeriği, görsel, ekran görüntüsü veya etkin sekmenin adresini içermez. Buradan kod indirilmez ya da çalıştırılmaz.
+
+storage justification:
+storage, dil/tema tercihlerini, önbelleğe alınan sürüm bilgisini ve son açılan/bildirilen sürümü yerel olarak saklar. Güncelleme sayfasının ve bildirimlerin tekrarlanmasını önler. QR içerikleri, görseller ve gezinme geçmişi saklanmaz.
+
+notifications (optional) justification:
+İsteğe bağlı masaüstü bildirimleri yeni sürüm çıktığında haber verir. Bu uyarıları istiyorsan izin ver.
+
+Remote code: NO
+Explanation:
+Hayır. JavaScript ve QR kütüphaneleri ZIP içindedir. Harici JavaScript veya WebAssembly yüklenmez. Uzaktaki sürüm JSON’u yalnızca veri olarak okunur; kod olarak çalıştırılmaz.
+
+Privacy policy: https://qr.haking.tr/tr/privacy.html
+Support: qr@haking.tr

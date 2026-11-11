@@ -1,5 +1,16 @@
 # Changelog
 
+## 1.1.3 — 2026-11-11
+
+- Connect the published Chrome Web Store listing and add developer support links.
+- Add scroll-driven storytelling, progress, staged reveals and reduced-motion support.
+- Add eight-language release pages, a dismissible once-per-release review prompt and support section.
+- Open release notes once after a genuine extension version update; same-version reloads do not reopen them.
+- Add optional desktop update notifications and a new-version badge. Notifications require an explicit user opt-in.
+- Add Russian and Arabic throughout the website, extension and store material, including RTL layouts.
+- Read up to six distinct QR codes per image with result selection and copy-all; add bounded regional scanning for multi-code images.
+- Refresh both store packages, descriptions, privacy explanations and native extension screenshots.
+
 ## 1.1.2 — 2026-11-08
 
 - Replace the teal identity with cobalt/navy branding and fresh PNG/SVG assets.

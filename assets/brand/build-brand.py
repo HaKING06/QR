@@ -1,4 +1,4 @@
-"""Build QR Scanner v1.1.2 cobalt identity; requires Pillow and Segoe UI."""
+"""Build QR Scanner cobalt identity; requires Pillow and Segoe UI."""
 from pathlib import Path
 from PIL import Image, ImageDraw, ImageFont
 from html import escape

@@ -1,0 +1,17 @@
+{
+  "extensionName": {
+    "message": "QR Scanner — قراءة QR & إنشاء QR"
+  },
+  "extensionDescription": {
+    "message": "اقرأ الصور وامسح علامة التبويب الحالية وأنشئ رموز QR دون مغادرة المتصفح."
+  },
+  "notificationInstalled": {
+    "message": "تم تحديث QR Scanner · {version}"
+  },
+  "notificationAvailable": {
+    "message": "يتوفر QR Scanner {version}"
+  },
+  "notificationBody": {
+    "message": "إصدار أحدث جاهز. افتح صفحة الإصدار لمعرفة طريقة التحديث."
+  }
+}

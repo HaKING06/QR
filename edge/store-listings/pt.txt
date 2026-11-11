@@ -1,4 +1,4 @@
-QR Scanner — v1.1.2
+QR Scanner — v1.1.3
 
 Name: QR Scanner
 
@@ -12,6 +12,12 @@ Site, Texto, Wi-Fi, E-mail, Telefone, SMS, Cartão de contato.
 
 QR desta aba. Ler aba atual.
 
+Encontre vários códigos QR em uma imagem e escolha o resultado desejado.
+
+Oito idiomas, incluindo russo e árabe com layout da direita para a esquerda.
+
+Notas claras após uma atualização real da extensão e notificações opcionais na área de trabalho.
+
 PNG para compartilhar. SVG para impressões nítidas em qualquer tamanho.
 
 Códigos QR estáticos. Sem expiração nem serviço de redirecionamento.
@@ -23,3 +29,4 @@ Confira o destino antes de abrir. HTTPS não garante que o site seja confiável.
 Website: https://qr.haking.tr/
 Privacy policy: https://qr.haking.tr/pt/privacy.html
 Support: qr@haking.tr
+Apoie o desenvolvedor: https://buymeacoffee.com/haking

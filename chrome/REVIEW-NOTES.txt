@@ -1,0 +1,31 @@
+QR Scanner — review/testing notes
+
+No account, login, subscription or test credentials are required.
+
+1. Open the extension from Chrome's toolbar on a normal HTTP(S) website tab.
+2. Select Create QR, choose Website and enter https://qr.haking.tr/.
+3. Generate the QR and download PNG or SVG. Copy image uses the clipboard
+   only when the user clicks its button and the browser allows it.
+4. Select Read QR and upload/drop/paste the generated PNG. The decoded
+   value should be https://qr.haking.tr/.
+5. Scan current tab uses activeTab granted by the user's toolbar action.
+   Chrome internal pages, the Web Store and restricted pages cannot be captured.
+6. QR for this tab creates a code for the active HTTP(S) tab URL.
+7. Language and theme menus support eight languages (including Russian and Arabic RTL) and light/dark/system modes.
+8. Upload an image with several QR codes; choose a result or copy all decoded values.
+9. The optional bell requests notifications only on a user click. storage keeps preferences and update deduplication state; no QR history is stored.
+10. On an installed-version increase, release notes open once. Same-version reloads do not reopen them. Review prompts can be dismissed; support payments are entirely optional.
+
+Images, screenshots and QR contents are processed locally. No content scripts
+are injected and browsing history is not monitored. The sole remote release
+request fetches https://qr.haking.tr/version.json as data, never as executable
+code. A newer-version notice appears only when its version is greater than
+the installed manifest version. Camera scanning belongs to the companion
+website; no camera permission is requested by the extension. A localized welcome/release page on qr.haking.tr opens after install/update and receives only version/source metadata.
+
+Support: qr@haking.tr
+Privacy policy: https://qr.haking.tr/en/privacy.html
+
+Türkçe: İnceleme için hesap gerekmez. Araç çubuğundan uzantıyı açın, QR oluşturup
+PNG indirin ve aynı görseli Okuyucu bölümünde okuyun. Ekran taraması için normal
+bir web sitesi sekmesi kullanın; tarayıcının dahili ve kısıtlı sayfaları desteklenmez.

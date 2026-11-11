@@ -1,14 +1,17 @@
 {
   "name": "qr-scanner",
-  "version": "1.1.2",
+  "version": "1.1.3",
   "private": true,
   "description": "Private multilingual QR scanner, generator and browser extension",
   "scripts": {
-    "test": "node --test tests/core.test.cjs",
+    "test": "node --test tests/core.test.cjs tests/updates.test.cjs",
     "build": "node tools/browser-icons.cjs && python tools/build.py",
     "check": "python tools/check.py",
     "build:static": "node tools/prepare-static.cjs",
-    "build:edge-assets": "python tools/edge_assets.py"
+    "build:edge-assets": "python tools/edge_assets.py",
+    "build:chrome-assets": "python tools/chrome_assets.py",
+    "build:chrome-package": "python tools/chrome_package.py",
+    "build:website": "python tools/build.py --site-only"
   },
   "keywords": [],
   "author": "Halit (HaKING)",

@@ -4,5 +4,14 @@
   },
   "extensionDescription": {
     "message": "Lies Bilder, scanne den aktuellen Tab und erstelle QR-Codes, ohne den Browser zu verlassen."
+  },
+  "notificationInstalled": {
+    "message": "QR Scanner wurde aktualisiert · {version}"
+  },
+  "notificationAvailable": {
+    "message": "QR Scanner {version} ist verfügbar"
+  },
+  "notificationBody": {
+    "message": "Eine neuere Version ist bereit. Öffne die Versionsseite und erfahre, wie du aktualisieren kannst."
   }
 }

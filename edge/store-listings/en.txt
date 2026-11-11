@@ -1,4 +1,4 @@
-QR Scanner — v1.1.2
+QR Scanner — v1.1.3
 
 Name: QR Scanner
 
@@ -12,6 +12,12 @@ Website, Text, Wi-Fi, Email, Phone, SMS, Contact card.
 
 QR for this tab. Scan current tab.
 
+Find multiple QR codes in one image and choose the result you need.
+
+Eight languages, including Russian and Arabic with right-to-left layout.
+
+Clear release notes after a real extension update, with optional desktop notifications.
+
 PNG for sharing. SVG for sharp prints at any size.
 
 Static QR codes. No expiry and no redirect service.
@@ -23,3 +29,4 @@ Review the destination before opening. HTTPS does not guarantee a trustworthy we
 Website: https://qr.haking.tr/
 Privacy policy: https://qr.haking.tr/en/privacy.html
 Support: qr@haking.tr
+Support the developer: https://buymeacoffee.com/haking

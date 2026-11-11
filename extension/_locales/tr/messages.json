@@ -4,5 +4,14 @@
   },
   "extensionDescription": {
     "message": "Tarayıcıdan ayrılmadan görselleri oku, açık sekmeyi tara ve QR kodlar oluştur."
+  },
+  "notificationInstalled": {
+    "message": "QR Scanner güncellendi · {version}"
+  },
+  "notificationAvailable": {
+    "message": "QR Scanner {version} sürümü mevcut"
+  },
+  "notificationBody": {
+    "message": "Daha yeni bir sürüm hazır. Nasıl güncelleyeceğini görmek için sürüm sayfasını aç."
   }
 }
